@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BarbarianUnitConfig
   m_EditorClassIdentifier: 
   UnitClass: 1
+  UnitPrefab: {fileID: 7241720472276025145, guid: 60b6a5899bab64246ba81398b403ede3, type: 3}
   BaseHealth: 100
   BaseAttackDamage: 5
   BaseMovementSpeed: 5

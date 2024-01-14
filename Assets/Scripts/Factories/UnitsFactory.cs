@@ -9,11 +9,12 @@ namespace Factories
     {
         [SerializeField] private UnitsConfigsContainer _unitsConfigsContainer;
 
-        public Unit CreateUnit(UnitClass unitClass)
+        public Unit CreateUnit(UnitClass unitClass, Vector3 spawnPosition = default, Quaternion rotation = default,  Transform parent = null)
         {
             var config = _unitsConfigsContainer.GetConfig(unitClass);
             var unitPrefab = config.UnitPrefab;
-            return Instantiate(unitPrefab, Vector3.zero, Quaternion.identity).Initialize(config);
+            return Instantiate(unitPrefab, spawnPosition, rotation==default? Quaternion.identity:rotation, parent).Initialize(config);
         }
+        
     }
 }

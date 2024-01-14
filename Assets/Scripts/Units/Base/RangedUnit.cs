@@ -6,6 +6,7 @@ namespace Units.Base
     {
         public override Unit Initialize(UnitConfig unitConfig)
         {
+            base.Initialize(unitConfig);
             return this;
         }
     }

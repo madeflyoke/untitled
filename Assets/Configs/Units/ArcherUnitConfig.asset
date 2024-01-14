@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ArcherUnitConfig
   m_EditorClassIdentifier: 
   UnitClass: 2
+  UnitPrefab: {fileID: 4147657701986570439, guid: 1517f10b539bf96408fd7dbfd59bcf40, type: 3}
   BaseHealth: 100
   BaseAttackDamage: 5
   BaseMovementSpeed: 5
