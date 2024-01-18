@@ -1,25 +1,49 @@
+using System;
+using System.Collections.Generic;
 using Interfaces;
 using Units.Components;
 using Units.Configs;
+using Units.StateMachine;
 using UnityEngine;
 
 namespace Units.Base
 {
-    public abstract class Unit : MonoBehaviour, IDamageable
+    public abstract class Unit : MonoBehaviour,IDamageable
     {
-        public UnitComponents Components { get; protected set; }
-        protected UnitStats _currentStats;
+        [field: SerializeField] public virtual UnitComponents Components { get; protected set; }
+        protected Dictionary<Type, IState> BehaviourStates { get; }= new();
+        
+        private IState _currentState;
 
         public virtual Unit Initialize(UnitConfig unitConfig)
         {
-            _currentStats = new UnitStats()
-            {
-                AttackDamage = unitConfig.BaseAttackDamage,
-                MovementSpeed = unitConfig.BaseMovementSpeed
-            };
-
-            Components = new UnitComponents();
+            InitializeStates();
+            
+            SwitchState<UnitIdleState>();
             return this;
+        }
+
+        protected virtual void InitializeStates()
+        {
+            BehaviourStates.Add(typeof(UnitIdleState), new UnitIdleState().Initialize());
+        }
+        
+        
+        public void SwitchState<TState>() where TState : IState
+        {
+            var newState = BehaviourStates[typeof(TState)];
+
+            if (newState==null || _currentState==BehaviourStates[typeof(TState)])
+            {
+                return;
+            }
+            
+            _currentState?.Exit();
+            
+            _currentState = newState;
+            
+            _currentState.Enter();
+            Debug.LogWarning($"{name} current state: {_currentState}");
         }
         
         public void MakeDamage()
@@ -27,11 +51,5 @@ namespace Units.Base
             
         }
 
-        public struct UnitStats
-        {
-            public float AttackDamage;
-            public float MovementSpeed;
-        }
-        
     }
 }

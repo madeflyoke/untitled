@@ -19,7 +19,7 @@ public class EnemiesSpawner : MonoBehaviour
    {
       for (int i = 0; i < _enemiesPoints.Count; i++)
       {
-         if (_enemies.Count-1>i)
+         if (_enemies.Count-1>=i)
          {
             var pointTr = _enemiesPoints[i];
             var unitClass = _enemies[i];

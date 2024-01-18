@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace Units.Components
 {
-    public class UnitComponents 
+    [Serializable]
+    public class UnitComponents
     {
         
     }

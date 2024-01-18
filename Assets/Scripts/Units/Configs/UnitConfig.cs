@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using Units.Base;
+using Units.Components;
 using Units.Enums;
 using UnityEngine;
 
