@@ -5,13 +5,15 @@ namespace Units.Base
 {
     public class RangedUnit : Unit
     {
+        public override UnitConfig Config => _config;
+
         private RangedUnitConfig _config;
             
-        public override Unit Initialize (UnitConfig unitConfig)
+        public override Unit Initialize(UnitConfig unitConfig, UnitTeam team)
         {
             _config = (RangedUnitConfig) unitConfig;
             
-            base.Initialize(unitConfig);
+            base.Initialize(unitConfig, team);
             return this;
         }
         

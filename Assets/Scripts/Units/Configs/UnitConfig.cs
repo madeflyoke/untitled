@@ -18,6 +18,9 @@ namespace Units.Configs
         [field: SerializeField] public float BaseAttackDamage = 5f;
         [BoxGroup("CommonStats")]
         [field: SerializeField] public float BaseMovementSpeed = 5f;
+        [BoxGroup("CommonStats")]
+        [field: SerializeField] public float AttackRange = 5f;
+
         
     }
 }

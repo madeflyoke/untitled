@@ -17,3 +17,4 @@ MonoBehaviour:
   BaseHealth: 100
   BaseAttackDamage: 5
   BaseMovementSpeed: 5
+  AttackRange: 1.7

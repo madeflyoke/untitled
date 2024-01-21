@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
+using Units.Base;
 using Units.Enums;
 using UnityEngine;
 
@@ -19,6 +18,11 @@ namespace Units.Configs
         }
         
 #if UNITY_EDITOR
+
+        public UnitConfig GetConfig(Unit unit)
+        {
+            return _configs.FirstOrDefault(x => x.Value.UnitPrefab == unit).Value;
+        }
         
         private void OnValidate()
         {
