@@ -1,16 +1,12 @@
 using System;
 using Units.Base;
-using Units.Components;
 
 namespace Units.StateMachine
 {
     public abstract class UnitBehaviourState : IDisposable, IState
     {
-        protected UnitComponents Components { get; private set; }
-
-        public virtual IState Initialize(UnitComponents components)
+        public virtual IState Initialize()
         {
-            Components = components;
             return this;
         }
         

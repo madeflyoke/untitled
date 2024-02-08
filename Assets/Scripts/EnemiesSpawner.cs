@@ -17,7 +17,8 @@ public class EnemiesSpawner : MonoBehaviour
    [SerializeField] private List<Transform> _enemiesPoints;
    [SerializeField] private List<Transform> _alliesPoints;
 
-   public List<Unit> EnemiesSpawnedUnits { get; } = new();
+   public List<UnitEntity> EnemiesSpawnedUnits { get; } = new();
+   public List<UnitEntity> AlliesSpawnedUnits { get; } = new();
    
    private void Awake()
    {
@@ -38,20 +39,20 @@ public class EnemiesSpawner : MonoBehaviour
             var pointTr = _enemiesPoints[i];
             var unitClass = _enemies[i];
 
-            EnemiesSpawnedUnits.Add(_unitsFactory.CreateUnit(unitClass, UnitTeam.ENEMIES, pointTr.position, pointTr.rotation, pointTr));
+            EnemiesSpawnedUnits.Add(_unitsFactory.SetTargetUnitClass(unitClass).CreateProduct(pointTr.position, pointTr.rotation, pointTr));
          }
       }
-      
-      for (int i = 0; i < _alliesPoints.Count; i++)
-      {
-         if (_allies.Count-1>=i)
-         {
-            var pointTr = _alliesPoints[i];
-            var unitClass = _allies[i];
-
-            _unitsFactory.CreateUnit(unitClass, UnitTeam.ALLIES, pointTr.position, pointTr.rotation, pointTr);
-         }
-      }
+      //
+      // for (int i = 0; i < _alliesPoints.Count; i++)
+      // {
+      //    if (_allies.Count-1>=i)
+      //    {
+      //       var pointTr = _alliesPoints[i];
+      //       var unitClass = _allies[i];
+      //
+      //       // AlliesSpawnedUnits.Add(_unitsFactory.CreateUnit(unitClass, pointTr.position, pointTr.rotation, pointTr));
+      //    }
+      // }
       
    }
 }

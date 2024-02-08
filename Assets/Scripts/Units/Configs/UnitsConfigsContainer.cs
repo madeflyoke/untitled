@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Units.Configs
 {
     [CreateAssetMenu(fileName = "UnitsConfigsContainer", menuName = "UnitsConfigsContainer")]
-    public class UnitsConfigsContainer :  SerializedScriptableObject
+    public class UnitsConfigsContainer : SerializedScriptableObject
     {
         [SerializeField] private Dictionary<UnitClass, UnitConfig> _configs;
 
@@ -19,11 +19,6 @@ namespace Units.Configs
         
 #if UNITY_EDITOR
 
-        public UnitConfig GetConfig(Unit unit)
-        {
-            return _configs.FirstOrDefault(x => x.Value.UnitPrefab == unit).Value;
-        }
-        
         private void OnValidate()
         {
             _configs = _configs.Values.ToDictionary(x => x.UnitClass, x => x);

@@ -1,6 +1,5 @@
 using System;
 using UniRx;
-using Units.Components;
 using UnityEngine;
 
 namespace Units.StateMachine
@@ -9,21 +8,21 @@ namespace Units.StateMachine
     {
         private IDisposable _test;
         
-        public override IState Initialize(UnitComponents components)
+        public override IState Initialize()
         {
-            base.Initialize(components);
+            base.Initialize();
             return this;
         }
 
         public override void Enter()
         {
-            if (Components.Unit.Team == UnitTeam.ALLIES)
-            {
-                _test = Observable.EveryUpdate().Where(_ => Input.GetKeyDown(KeyCode.K)).Subscribe(_ =>
-                {
-                    Components.Unit.SwitchState<UnitChasingState>();
-                });
-            }
+            // if (Components.Unit.Team == UnitTeam.ALLIES)
+            // {
+            //     _test = Observable.EveryUpdate().Where(_ => Input.GetKeyDown(KeyCode.K)).Subscribe(_ =>
+            //     {
+            //         Components.Unit.SwitchState<UnitChasingState>();
+            //     });
+            // }
         }
 
         public override void Exit()

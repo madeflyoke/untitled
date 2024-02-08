@@ -1,12 +1,11 @@
-using Units.Components;
 
 namespace Units.StateMachine
 {
     public class UnitAttackState : UnitBehaviourState
     {
-        public override IState Initialize(UnitComponents components)
+        public override IState Initialize()
         {
-            base.Initialize(components);
+            base.Initialize();
             return this;
         }
 
