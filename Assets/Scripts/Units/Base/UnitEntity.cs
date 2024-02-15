@@ -1,33 +1,29 @@
 using System;
 using System.Collections.Generic;
+using Components.Health;
+using Components.Interfaces;
 using Factories.Interfaces;
-using Units.Components.Interfaces;
+using Interfaces;
 using UnityEngine;
 
 namespace Units.Base
 {
-    public class UnitEntity : MonoBehaviour, IFactoryProduct
+    public class UnitEntity : MonoBehaviour, IEntity, IFactoryProduct
     {
-        private readonly Dictionary<Type, IUnitComponent> _components = new();
-
-        public UnitEntity Initialize()
-        {
-            return this;
-        }
+        private readonly Dictionary<Type, IEntityComponent> _components = new();
         
-        public UnitEntity AddUnitComponent (IUnitComponent unitComponent)
+        public IEntity AddEntityComponent (IEntityComponent unitEntityComponent)
         {
-            var componentType = unitComponent.GetType();
+            var componentType = unitEntityComponent.GetType();
             if (_components.ContainsKey(componentType)==false) //need it?
             {
-                _components.Add(componentType, unitComponent);
+                _components.Add(componentType, unitEntityComponent);
             }
 
             return this;
         }
         
-        
-        public TComponent GetUnitComponent<TComponent>() where TComponent : IUnitComponent
+        public TComponent GetEntityComponent<TComponent>() where TComponent : IEntityComponent
         {
             if (_components.ContainsKey(typeof(TComponent)))
             {
@@ -36,6 +32,5 @@ namespace Units.Base
             
             throw new Exception($"No component with type: {typeof(TComponent)}!");
         }
-
     }
 }

@@ -11,7 +11,8 @@ namespace Units.Configs
     public class UnitsConfigsContainer : SerializedScriptableObject
     {
         [SerializeField] private Dictionary<UnitClass, UnitConfig> _configs;
-
+        public List<UnitConfig> Configs => _configs.Values.ToList();
+        
         public UnitConfig GetConfig(UnitClass unitClass)
         {
             return _configs[unitClass];

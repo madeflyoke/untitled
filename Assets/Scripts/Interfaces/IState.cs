@@ -1,8 +1,9 @@
-public interface IState
+namespace Interfaces
 {
-    public abstract IState Initialize();
- 
-    public abstract void Enter();
+    public interface IState
+    {
+        public abstract void Enter();
     
-    public abstract void Exit();
+        public abstract void Exit();
+    }
 }

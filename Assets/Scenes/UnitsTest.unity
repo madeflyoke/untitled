@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0577eb48cc9e89443a37bfa2dd03600e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemies: 01000000
+  _enemies: 010000000100000001000000
   _allies: 01000000
   _unitsFactory: {fileID: 1784348748}
   _enemiesPoints:

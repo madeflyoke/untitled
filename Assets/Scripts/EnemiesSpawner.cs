@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
+using Components;
 using Factories;
+using Factories.Units;
 using Units.Base;
 using Units.Enums;
 using UnityEngine;
@@ -10,15 +13,14 @@ public class EnemiesSpawner : MonoBehaviour
    
    [SerializeField] private List<UnitClass> _enemies;
    [SerializeField] private List<UnitClass> _allies;
-   
-   
+
    [SerializeField] private UnitsFactory _unitsFactory;
 
    [SerializeField] private List<Transform> _enemiesPoints;
    [SerializeField] private List<Transform> _alliesPoints;
 
-   public List<UnitEntity> EnemiesSpawnedUnits { get; } = new();
-   public List<UnitEntity> AlliesSpawnedUnits { get; } = new();
+   private List<EntityHolder> EnemiesSpawnedUnits { get; } = new();
+   private List<EntityHolder> AlliesSpawnedUnits { get; } = new();
    
    private void Awake()
    {
@@ -39,7 +41,9 @@ public class EnemiesSpawner : MonoBehaviour
             var pointTr = _enemiesPoints[i];
             var unitClass = _enemies[i];
 
-            EnemiesSpawnedUnits.Add(_unitsFactory.SetTargetUnitClass(unitClass).CreateProduct(pointTr.position, pointTr.rotation, pointTr));
+            EnemiesSpawnedUnits.Add(_unitsFactory
+               .SetProductRequestData(unitClass, pointTr.position, pointTr.rotation, pointTr)
+               .CreateProduct().GetEntityComponent<EntityHolder>());
          }
       }
       //
@@ -53,6 +57,10 @@ public class EnemiesSpawner : MonoBehaviour
       //       // AlliesSpawnedUnits.Add(_unitsFactory.CreateUnit(unitClass, pointTr.position, pointTr.rotation, pointTr));
       //    }
       // }
-      
    }
+
+   // private UnitHolder GetClosestEnemy(Vector3 originalPoint)
+   // {
+   //    return EnemiesSpawnedUnits.OrderBy(x => Vector3.Distance(originalPoint, x.transform.position)).FirstOrDefault());
+   // }
 }
