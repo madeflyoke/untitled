@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using Components.Settings.Interfaces;
 using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace Components.Settings
 {
-    public class ComponentsSettingsHolder : MonoBehaviour
+    [Serializable]
+    public class ComponentsSettingsHolder
     {
-        [BoxGroup("CommonStats")]
-        [ListDrawerSettings(HideAddButton = true, HideRemoveButton = true),
-         SerializeField] [HideReferenceObjectPicker] private List<IComponentSettings> _componentsSettings;
+        [field: SerializeField,OnCollectionChanged(nameof(AfterComponentsSettingsChanged))] 
+        public List<IComponentSettings> ComponentsSettings { get; private set; }
         
-        public void AddComponentSettings<TComponentType> () where TComponentType: IComponentSettings
+        [Button]
+        public void TryAddComponentSettings<TComponentType> () where TComponentType: IComponentSettings
         {
-            _componentsSettings ??= new List<IComponentSettings>();
-            if (IsComponentSettingsExists<TComponentType>(out IComponentSettings statsSettings)==false)
+            ComponentsSettings ??= new List<IComponentSettings>();
+            if (IsComponentSettingsExists<TComponentType>()==false)
             {
-                _componentsSettings.Add(Activator.CreateInstance<TComponentType>());
+                ComponentsSettings.Add(Activator.CreateInstance<TComponentType>());
             }
         }
         
-        private bool IsComponentSettingsExists<TComponentType>(out IComponentSettings statsSettings)where TComponentType : IComponentSettings
-        {
-            statsSettings = _componentsSettings.FirstOrDefault(x => x.GetType() == typeof(TComponentType));
-            return statsSettings != null;
-        }
-
         public TComponentType GetComponentSettings<TComponentType>() where TComponentType : IComponentSettings
         {
             if (IsComponentSettingsExists<TComponentType>(out IComponentSettings statsSettings))
@@ -35,8 +32,33 @@ namespace Components.Settings
                 return (TComponentType) statsSettings;
             }
 
-            return default;
+            throw new Exception(
+                $"Component settings holder does NOT have required component {typeof(TComponentType).Name}!");
+        }
+        
+        private bool IsComponentSettingsExists<TComponentType>() where TComponentType : IComponentSettings
+        {
+            return ComponentsSettings.FirstOrDefault(x => x.GetType() == typeof(TComponentType)) != null;
         }
 
+        private bool IsComponentSettingsExists<TComponentType>(out IComponentSettings statsSettings) where TComponentType : IComponentSettings
+        {
+            statsSettings = ComponentsSettings.FirstOrDefault(x => x.GetType() == typeof(TComponentType));
+            return statsSettings != null;
+        }
+
+#if UNITY_EDITOR
+        
+        private void AfterComponentsSettingsChanged(CollectionChangeInfo info)
+        {
+            var component = (IComponentSettings) info.Value;
+            
+            if (info.ChangeType==CollectionChangeType.Add && ComponentsSettings.Count(x => x.GetType()==component.GetType())>1)
+            {
+                ComponentsSettings.Remove(component);
+            }
+        }
+        
+#endif
     }
 }

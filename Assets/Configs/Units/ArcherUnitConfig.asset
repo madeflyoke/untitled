@@ -15,25 +15,29 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 9025364475223084031, guid: 9f1d99bd9bab41c449f3a508a144c505, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: ComponentsSettings
+    - Name: ComponentsSettingsHolder
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Units.Configs.UnitConfig+IComponentSettings,
+      Data: 0|Components.Settings.ComponentsSettingsHolder, Assembly-CSharp
+    - Name: <ComponentsSettings>k__BackingField
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Components.Settings.Interfaces.IComponentSettings,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Units.Configs.UnitConfig+ModelHolderSettings, Assembly-CSharp
+      Data: 2|Components.Settings.ModelHolderSettings, Assembly-CSharp
     - Name: ModelHolderPrefab
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -43,4 +47,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  UnitClass: 2
+    - Name: 
+      Entry: 8
+      Data: 
+  unitVariant: 2

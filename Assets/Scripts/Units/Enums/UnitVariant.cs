@@ -1,6 +1,6 @@
 ﻿namespace Units.Enums
 {
-    public enum UnitClass
+    public enum UnitVariant
     {
         NONE = 0,
         BARBARIAN = 1,

@@ -4,32 +4,29 @@ using Components.Settings;
 using Components.View;
 using Interfaces;
 using Units.Base;
-using Units.Configs;
 using UnityEngine;
 
 namespace Factories.Units.SubFactories.Decorators
 {
     public class BaseUnitComponentsDecorator : IEntityDecorator<UnitEntity>
     {
-        public UnitEntity WrappedEntity { get; private set; }
-        private readonly UnitConfig _config;
+        private readonly ModelHolderSettings _modelHolderSettings;
         
-        public BaseUnitComponentsDecorator(UnitEntity unitEntity, UnitConfig config)
+        public BaseUnitComponentsDecorator(ModelHolderSettings modelHolderSettings)
         {
-            WrappedEntity = unitEntity;
-            _config = config;
+            _modelHolderSettings = modelHolderSettings;
+        }
+        
+        public UnitEntity Decorate(UnitEntity entity)
+        {
+            return CreateBaseComponents(entity);
         }
 
-        public UnitEntity Decorate()
+        private UnitEntity CreateBaseComponents(UnitEntity entity)
         {
-            return CreateBaseComponents();
-        }
-
-        private UnitEntity CreateBaseComponents()
-        {
-            ModelHolder modelHolder = CreateUnitModelHolder(WrappedEntity.GetEntityComponent<EntityHolder>().ViewTransform);
-            WrappedEntity.AddEntityComponent(modelHolder);
-            return WrappedEntity;
+            ModelHolder modelHolder = CreateUnitModelHolder(entity.GetEntityComponent<EntityHolder>().ViewTransform);
+            entity.AddEntityComponent(modelHolder);
+            return entity;
         }
         
         private ModelHolder CreateUnitModelHolder(Transform parent)
@@ -37,7 +34,7 @@ namespace Factories.Units.SubFactories.Decorators
             GameObjectComponentBuilder<ModelHolder> goBuilder = new GameObjectComponentBuilder<ModelHolder>();
 
             var modelHolder = goBuilder
-                .SetPrefab(_config.ComponentsSettingsHolder.GetComponentSettings<ModelHolderSettings>().ModelHolderPrefab)
+                .SetPrefab(_modelHolderSettings.ModelHolderPrefab)
                 .SetParent(parent)
                 .SetPosition(parent.position)
                 .SetRotation(parent.rotation)
@@ -45,6 +42,5 @@ namespace Factories.Units.SubFactories.Decorators
 
             return modelHolder;
         }
-        
     }
 }

@@ -11,8 +11,8 @@ public class EnemiesSpawner : MonoBehaviour
 {
    public static EnemiesSpawner Instance;
    
-   [SerializeField] private List<UnitClass> _enemies;
-   [SerializeField] private List<UnitClass> _allies;
+   [SerializeField] private List<UnitVariant> _enemies;
+   [SerializeField] private List<UnitVariant> _allies;
 
    [SerializeField] private UnitsFactory _unitsFactory;
 

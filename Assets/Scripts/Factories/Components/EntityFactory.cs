@@ -12,7 +12,7 @@ namespace Factories.Components
     {
         private readonly CustomTransformData _spawnData;
         private readonly string _name;
-        private static EntityHolder _entityHolderPrefab = Resources.Load<EntityHolder>("Prefabs/Components/Resources/EmptyUnitHolder.prefab");
+        private static EntityHolder _entityHolderPrefab = Resources.Load<EntityHolder>("EmptyUnitHolder");
 
         public EntityFactory(CustomTransformData spawnData, string name)
         {

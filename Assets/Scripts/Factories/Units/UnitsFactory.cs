@@ -1,9 +1,17 @@
 using System;
 using System.Collections.Generic;
-using Builders.Containers;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.ExceptionServices;
 using Builders.Utility;
+using Components.Settings;
 using Factories.Interfaces;
 using Factories.Units.SubFactories;
+using Factories.Units.SubFactories.Attributes;
+using Factories.Units.SubFactories.Base;
+using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
+using Sirenix.Utilities;
 using Units.Base;
 using Units.Configs;
 using Units.Enums;
@@ -12,16 +20,17 @@ using Utility;
 
 namespace Factories.Units
 {
-    public class UnitsFactory : MonoBehaviour, IFactory<UnitEntity>
+    public class UnitsFactory : SerializedMonoBehaviour, IFactory<UnitEntity>
     {
         [SerializeField] private UnitsConfigsContainer _unitsConfigsContainer;
-        
+        [SerializeField, ReadOnly] private Dictionary<UnitVariant, UnitSubFactory> _subFactoriesMap;
+
         private readonly UnitProductRequestData _unitProductRequestData = new ();
-        private readonly Dictionary<UnitClass, UnitEntity> _cachedUnits = new();
+        private readonly Dictionary<UnitVariant, UnitEntity> _cachedUnits = new();
         
-        public UnitsFactory SetProductRequestData(UnitClass unitClass, Vector3 position = default, Quaternion rotation = default, Transform parent = null)
+        public UnitsFactory SetProductRequestData(UnitVariant unitVariant, Vector3 position = default, Quaternion rotation = default, Transform parent = null)
         {
-            _unitProductRequestData.TargetUnitClass = unitClass;
+            _unitProductRequestData.TargetUnitVariant = unitVariant;
         
             _unitProductRequestData.SpawnData.Position = position;
             _unitProductRequestData.SpawnData.Rotation = rotation;
@@ -41,29 +50,11 @@ namespace Factories.Units
 
         private UnitEntity CreateTargetUnit()
         {
-            switch (_unitProductRequestData.TargetUnitClass)
-            {
-                case UnitClass.BARBARIAN:
-                    return CreateBarbarian();
-                case UnitClass.ARCHER:
-                    return CreateArcher();
-            }
-
-            throw new Exception("Invalid unit class request");
-        }
-
-        private UnitEntity CreateBarbarian()
-        {
-            return new BarbarianUnitFactory(_unitProductRequestData.SpawnData, _unitsConfigsContainer.GetConfig(_unitProductRequestData.TargetUnitClass))
+            return _subFactoriesMap[_unitProductRequestData.TargetUnitVariant]
+                .Initialize(_unitProductRequestData.SpawnData)
                 .CreateProduct();
         }
-
-        private UnitEntity CreateArcher()
-        {
-            return new ArcherUnitFactory(_unitProductRequestData.SpawnData, _unitsConfigsContainer.GetConfig(_unitProductRequestData.TargetUnitClass))
-                .CreateProduct();
-        }
-
+        
         private UnitEntity MakeCopy(UnitEntity original, CustomTransformData spawnData) //TODO Check in the end
         {
             GameObjectComponentBuilder<UnitEntity> goBuilder = new GameObjectComponentBuilder<UnitEntity>();
@@ -83,11 +74,98 @@ namespace Factories.Units
         //     HealthControllerBuilder builder = new();
         //     builder.SetMaxHealth()
         // }
-
+        
         private class UnitProductRequestData
         {
-            public UnitClass TargetUnitClass = UnitClass.NONE;
+            public UnitVariant TargetUnitVariant = UnitVariant.NONE;
             public readonly CustomTransformData SpawnData = new();
         }
+        
+#if UNITY_EDITOR
+
+        [Button]
+        private void SetupSubFactories()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+  
+            GameObject subFactoriesParent = new GameObject();
+            subFactoriesParent.name = "SubFactories";
+            subFactoriesParent.transform.parent = transform;
+            
+            _subFactoriesMap = new();
+            
+            void AddSubFactory<TFactory>() where TFactory: UnitSubFactory
+            {
+                UnitVariantAttribute attribute = CustomAttributeExtensions.GetCustomAttribute<UnitVariantAttribute>(typeof(TFactory));
+
+                if (attribute==null)
+                {
+                    Debug.LogError("Unit's factory doesnt have corresponding UnitVariant attribute!");
+                    return;
+                }
+
+                _subFactoriesMap.Add(attribute.UnitVariant, subFactoriesParent.AddComponent<TFactory>()
+                    .SetRelatedConfig(_unitsConfigsContainer.GetConfig(attribute.UnitVariant)));
+            }
+            
+            AddSubFactory<BarbarianUnitFactory>();
+            AddSubFactory<ArcherUnitFactory>();
+          
+        }
+
+        [Button]
+        private void ValidateSubFactoriesUnits()
+        {
+            Debug.LogWarning($"Units validation start.");
+
+            var parentName = "TEST_UNITS";
+            var previousParent = GameObject.Find(parentName);
+            if (previousParent!=null)
+            {
+                Destroy(previousParent);
+            }
+            
+            GameObject parent = new GameObject();
+            parent.name = parentName;
+            parent.tag = "EditorOnly";
+            
+            foreach (var item in Enum.GetValues(typeof(UnitVariant)))
+            {
+                var unitVariant = (UnitVariant) item;
+
+                if (unitVariant!=UnitVariant.NONE)
+                {
+                    try
+                    {
+                        _subFactoriesMap[unitVariant]
+                            .Initialize(new CustomTransformData()
+                            {
+                                Parent = parent.transform,
+                                Position = Vector3.zero + new Vector3((int) unitVariant*3,0,0) 
+                            })
+                            .CreateProduct();
+                    }
+                    catch(Exception e)
+                    {
+                        DestroyImmediate(parent);
+                        Debug.LogWarning($"<color=red>Aborting validation of {unitVariant} unit due to error!</color>");
+                        ExceptionDispatchInfo.Capture(e).Throw();
+                        return;
+                    }
+                    Debug.LogWarning($"<color=green>Validation of {unitVariant} unit completed!</color>");
+                }
+            }
+        }
+
+        private void OnValidate()
+        {
+            // BarbarianUnitFactory.GetRequiredSettings<>()
+        }
+
+
+#endif
     }
 }

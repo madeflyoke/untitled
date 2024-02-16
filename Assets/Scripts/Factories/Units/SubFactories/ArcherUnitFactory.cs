@@ -1,26 +1,19 @@
-﻿using Factories.Components;
-using Factories.Interfaces;
+﻿using Components.Settings;
+using Factories.Units.SubFactories.Attributes;
+using Factories.Units.SubFactories.Base;
 using Factories.Units.SubFactories.Decorators;
 using Units.Base;
-using Units.Configs;
-using Utility;
+using Units.Enums;
 
 namespace Factories.Units.SubFactories
 {
-    public class ArcherUnitFactory : IFactory<UnitEntity>
+    [UnitVariant(UnitVariant = UnitVariant.ARCHER)]
+    public class ArcherUnitFactory : UnitSubFactory
     {
-        private readonly UnitEntity _unitEntity;
-        
-        public ArcherUnitFactory(CustomTransformData spawnData, UnitConfig config)
+        public override UnitEntity CreateProduct()
         {
-            UnitEntity entity = new EntityFactory<UnitEntity>(spawnData, config.UnitClass.ToString()).CreateProduct();
-            UnitEntity baseEntityComponents = new BaseUnitComponentsDecorator(entity, config).Decorate();
-            _unitEntity = baseEntityComponents;
-        }
-        
-        public UnitEntity CreateProduct()
-        {
-            return _unitEntity;
+            DecorateBy(new BaseUnitComponentsDecorator(Config.ComponentsSettingsHolder.GetComponentSettings<ModelHolderSettings>()));
+            return base.CreateProduct();
         }
     }
 }

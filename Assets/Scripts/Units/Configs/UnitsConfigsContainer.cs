@@ -10,19 +10,18 @@ namespace Units.Configs
     [CreateAssetMenu(fileName = "UnitsConfigsContainer", menuName = "UnitsConfigsContainer")]
     public class UnitsConfigsContainer : SerializedScriptableObject
     {
-        [SerializeField] private Dictionary<UnitClass, UnitConfig> _configs;
-        public List<UnitConfig> Configs => _configs.Values.ToList();
+        [SerializeField] private Dictionary<UnitVariant, UnitConfig> _configs;
         
-        public UnitConfig GetConfig(UnitClass unitClass)
+        public UnitConfig GetConfig(UnitVariant unitVariant)
         {
-            return _configs[unitClass];
+            return _configs[unitVariant];
         }
         
 #if UNITY_EDITOR
 
         private void OnValidate()
         {
-            _configs = _configs.Values.ToDictionary(x => x.UnitClass, x => x);
+            _configs = _configs.Values.ToDictionary(x => x.unitVariant, x => x);
         }
         
 #endif
