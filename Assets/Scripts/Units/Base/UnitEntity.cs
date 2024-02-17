@@ -4,13 +4,14 @@ using Components.Health;
 using Components.Interfaces;
 using Factories.Interfaces;
 using Interfaces;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Units.Base
 {
     public class UnitEntity : MonoBehaviour, IEntity, IFactoryProduct
     {
-        private readonly Dictionary<Type, IEntityComponent> _components = new();
+        [ShowInInspector, ReadOnly] private readonly Dictionary<Type, IEntityComponent> _components = new();
         
         public IEntity AddEntityComponent (IEntityComponent unitEntityComponent)
         {

@@ -50,8 +50,6 @@ namespace Factories.Units.SubFactories.Base
             Config = config;
             return this;
         }
-        
-        
 #endif
     }
 }

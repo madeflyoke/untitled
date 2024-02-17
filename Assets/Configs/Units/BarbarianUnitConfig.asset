@@ -31,13 +31,22 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 2|Components.Settings.ModelHolderSettings, Assembly-CSharp
     - Name: ModelHolderPrefab
       Entry: 10
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Components.Settings.HealthComponentSettings, Assembly-CSharp
+    - Name: BaseHealth
+      Entry: 3
+      Data: 100
     - Name: 
       Entry: 8
       Data: 

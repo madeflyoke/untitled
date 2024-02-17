@@ -1,7 +1,7 @@
 ﻿using Components.Settings;
+using Factories.Decorators;
 using Factories.Units.SubFactories.Attributes;
 using Factories.Units.SubFactories.Base;
-using Factories.Units.SubFactories.Decorators;
 using Units.Base;
 using Units.Enums;
 
@@ -12,7 +12,12 @@ namespace Factories.Units.SubFactories
     {
         public override UnitEntity CreateProduct()
         {
-            DecorateBy(new BaseUnitComponentsDecorator(Config.ComponentsSettingsHolder.GetComponentSettings<ModelHolderSettings>()));
+            DecorateBy(new ModelHolderDecorator(Config.ComponentsSettingsHolder
+                .GetComponentSettings<ModelHolderSettings>()));
+            
+            DecorateBy(new HealthComponentDecorator(Config.ComponentsSettingsHolder
+                .GetComponentSettings<HealthComponentSettings>()));
+            
             return base.CreateProduct();
         }
     }

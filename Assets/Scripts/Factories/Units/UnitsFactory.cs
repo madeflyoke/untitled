@@ -67,13 +67,6 @@ namespace Factories.Units
                 .Build();
         }
 
-        // private HealthController CreateHealthController()
-        // {
-        //     var config = _unitsConfigsContainer.GetConfig(_unitProductRequestData.TargetUnitClass);
-        //
-        //     HealthControllerBuilder builder = new();
-        //     builder.SetMaxHealth()
-        // }
         
         private class UnitProductRequestData
         {
