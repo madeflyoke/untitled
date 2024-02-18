@@ -16,8 +16,8 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: b84dee49ace3fca43b4335f9af4bd834, type: 2}
     - {fileID: 11400000, guid: b3e94c7a3db53ec4386c115bb77d75ba, type: 2}
+    - {fileID: 11400000, guid: b84dee49ace3fca43b4335f9af4bd834, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -25,11 +25,11 @@ MonoBehaviour:
     SerializationNodes:
     - Name: _configs
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Units.Enums.UnitClass, Assembly-CSharp],[Units.Configs.UnitConfig,
+      Data: 0|System.Collections.Generic.Dictionary`2[[Units.Enums.UnitVariant, Assembly-CSharp],[Units.Configs.UnitConfig,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Units.Enums.UnitClass,
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Units.Enums.UnitVariant,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -48,7 +48,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: $v
       Entry: 10
       Data: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: $v
       Entry: 10
       Data: 1

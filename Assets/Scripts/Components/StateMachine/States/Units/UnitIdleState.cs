@@ -9,7 +9,7 @@ namespace Components.StateMachine.States.Units
     {
         private IDisposable _test;
 
-        public UnitIdleState(global::Components.StateMachine.StateMachine stateMachine) : base(stateMachine)
+        public UnitIdleState(StateMachine stateMachine) : base(stateMachine)
         {
             
         }

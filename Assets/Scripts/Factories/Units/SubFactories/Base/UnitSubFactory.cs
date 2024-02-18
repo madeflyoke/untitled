@@ -20,10 +20,10 @@ namespace Factories.Units.SubFactories.Base
 
         public UnitSubFactory Initialize(CustomTransformData spawnData)
         {
-            _unitEntity = new EntityFactory<UnitEntity>(spawnData, Config.unitVariant.ToString()).CreateProduct();
+            _unitEntity = new EntityFactory<UnitEntity>(spawnData, Config.UnitVariant.ToString()).CreateProduct();
             
 #if UNITY_EDITOR
-            Debug.LogWarning($"Unit {Config.unitVariant} initialized with base entity.");
+            Debug.LogWarning($"Unit {Config.UnitVariant} initialized with base entity.");
 #endif
             return this;
         }
@@ -33,14 +33,13 @@ namespace Factories.Units.SubFactories.Base
             return _unitEntity;
         }
 
-        protected UnitEntity DecorateBy(IEntityDecorator<UnitEntity> decorator)
+        protected void DecorateBy(IEntityDecorator decorator)
         {
-            var entity = decorator.Decorate(_unitEntity);
+            decorator.Decorate(_unitEntity);
             
 #if UNITY_EDITOR
-            Debug.LogWarning($"Unit {Config.unitVariant} decorated with {decorator.GetType().Name}.");
+            Debug.LogWarning($"Unit {Config.UnitVariant} decorated with {decorator.GetType().Name}.");
 #endif
-            return entity;
         }
 
 #if UNITY_EDITOR

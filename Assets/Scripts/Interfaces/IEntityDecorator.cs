@@ -1,7 +1,7 @@
 namespace Interfaces
 {
-    public interface IEntityDecorator<TEntity> where TEntity : IEntity
+    public interface IEntityDecorator
     {
-        public abstract TEntity Decorate(TEntity entity);
+        public abstract IEntity Decorate(IEntity entity);
     }
 }

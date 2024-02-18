@@ -4,7 +4,7 @@ namespace Components.StateMachine.States.Units
 {
     public class UnitAttackState : UnitBehaviourState
     {
-        public UnitAttackState(global::Components.StateMachine.StateMachine stateMachine) : base(stateMachine)
+        public UnitAttackState(StateMachine stateMachine) : base(stateMachine)
         {
         }
         

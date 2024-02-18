@@ -14,10 +14,10 @@ namespace Units.Configs
     public class UnitConfig : SerializedScriptableObject
     {
         [BoxGroup("General")]
-        [field: SerializeField] public UnitVariant unitVariant;
+        [field: SerializeField] public UnitVariant UnitVariant { get; private set; }
         
         [BoxGroup("ComponentsSettings")] 
-        [OdinSerialize] public ComponentsSettingsHolder ComponentsSettingsHolder = new();
+        [field: OdinSerialize] public ComponentsSettingsHolder ComponentsSettingsHolder { get; private set; }= new();
 
         // [BoxGroup("CommonStats")]
         // [field: SerializeField] public float BaseAttackDamage = 5f;

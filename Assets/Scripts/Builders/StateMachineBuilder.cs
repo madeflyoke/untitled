@@ -4,6 +4,7 @@ using Builders.Interfaces;
 using Components.StateMachine;
 using Components.StateMachine.States.Units;
 using Interfaces;
+using UnityEngine.AI;
 
 namespace Builders
 {
@@ -23,16 +24,16 @@ namespace Builders
             _states.Add(typeof(UnitIdleState), new UnitIdleState(_stateMachine));
             return this;
         }
-        //
-        // public StateMachineBuilder AddChasingState()
-        // {
-        //     _states.Add(typeof(UnitChasingState), new UnitChasingState(_stateMachine, ));
-        //     return this;
-        // }
+        
+        public StateMachineBuilder AddChasingState(NavMeshAgent agent)
+        {
+            _states.Add(typeof(UnitChasingState), new UnitChasingState(_stateMachine, agent));
+            return this;
+        }
 
         public StateMachine Build()
         {
-            return new StateMachine(_states);
+            return _stateMachine;
         }
     }
 }

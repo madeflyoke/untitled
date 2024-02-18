@@ -6,7 +6,7 @@ using Units.Base;
 
 namespace Factories.Decorators
 {
-    public class HealthComponentDecorator : IEntityDecorator<UnitEntity>
+    public class HealthComponentDecorator : IEntityDecorator
     {
         private readonly HealthComponentSettings _healthComponentSettings;
         
@@ -15,13 +15,13 @@ namespace Factories.Decorators
             _healthComponentSettings = healthComponentSettings;
         }
         
-        public UnitEntity Decorate(UnitEntity entity)
+        public IEntity Decorate(IEntity entity)
         {
             var healthController = CreateHealthController();
             entity.AddEntityComponent(healthController);
             return entity;
         }
-        
+
         private HealthController CreateHealthController()
         {
             HealthControllerBuilder builder = new();

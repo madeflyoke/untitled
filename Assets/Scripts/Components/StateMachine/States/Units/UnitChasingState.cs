@@ -12,7 +12,7 @@ namespace Components.StateMachine.States.Units
         private readonly NavMeshAgent _agent;
         private Transform _targetTr;
 
-        public UnitChasingState(global::Components.StateMachine.StateMachine stateMachine, NavMeshAgent agent) :base (stateMachine)
+        public UnitChasingState(StateMachine stateMachine, NavMeshAgent agent) :base (stateMachine)
         {
             _agent = agent;
         }

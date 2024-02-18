@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Units.Base;
 using Units.Enums;
 using UnityEngine;
 
@@ -21,7 +20,7 @@ namespace Units.Configs
 
         private void OnValidate()
         {
-            _configs = _configs.Values.ToDictionary(x => x.unitVariant, x => x);
+            _configs = _configs.Values.ToDictionary(x => x.UnitVariant, x => x);
         }
         
 #endif

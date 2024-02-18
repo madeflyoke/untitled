@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Factories.Decorators
 {
-    public class ModelHolderDecorator : IEntityDecorator<UnitEntity>
+    public class ModelHolderDecorator : IEntityDecorator
     {
         private readonly ModelHolderSettings _modelHolderSettings;
         
@@ -17,7 +17,7 @@ namespace Factories.Decorators
             _modelHolderSettings = modelHolderSettings;
         }
         
-        public UnitEntity Decorate(UnitEntity entity)
+        public IEntity Decorate(IEntity entity)
         {
             var modelHolder = CreateModelHolder(entity.GetEntityComponent<EntityHolder>().ViewTransform);
             entity.AddEntityComponent(modelHolder);

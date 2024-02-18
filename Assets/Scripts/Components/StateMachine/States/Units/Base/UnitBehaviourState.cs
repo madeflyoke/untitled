@@ -5,9 +5,9 @@ namespace Components.StateMachine.States.Units.Base
 {
     public abstract class UnitBehaviourState : IDisposable, IState
     {
-        protected global::Components.StateMachine.StateMachine StateMachine { get; }
+        protected StateMachine StateMachine { get; }
 
-        protected UnitBehaviourState(global::Components.StateMachine.StateMachine stateMachine)
+        protected UnitBehaviourState(StateMachine stateMachine)
         {
             StateMachine = stateMachine;
         }

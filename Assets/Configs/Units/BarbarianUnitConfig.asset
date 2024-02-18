@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: ComponentsSettingsHolder
+    - Name: <ComponentsSettingsHolder>k__BackingField
       Entry: 7
       Data: 0|Components.Settings.ComponentsSettingsHolder, Assembly-CSharp
     - Name: <ComponentsSettings>k__BackingField
@@ -59,4 +59,4 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  unitVariant: 1
+  <UnitVariant>k__BackingField: 1
