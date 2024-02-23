@@ -1,10 +1,9 @@
-using System.Collections.Generic;
-using Builders;
-using Components.StateMachine;
+using System;
 using Interfaces;
 
-namespace Factories.Decorators
+namespace Legacy.StateMachine
 {
+    [Obsolete]
     public class StateMachineDecorator : IEntityDecorator
     {
         private readonly StateMachineBuilder _stateMachineBuilder;
@@ -16,7 +15,7 @@ namespace Factories.Decorators
 
         public StateMachineDecorator AppendState<TState>() where TState : IState
         {
-            _stateMachineBuilder.AddIdleState();
+            //unfinished 
             return this;
         }
         

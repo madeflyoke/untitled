@@ -1,4 +1,5 @@
-﻿using Components.Settings;
+﻿using Components;
+using Components.Settings;
 using Factories.Decorators;
 using Factories.Units.SubFactories.Attributes;
 using Factories.Units.SubFactories.Base;
@@ -17,6 +18,9 @@ namespace Factories.Units.SubFactories
             
             DecorateBy(new HealthComponentDecorator(Config.ComponentsSettingsHolder
                 .GetComponentSettings<HealthComponentSettings>()));
+            
+            DecorateBy(new MovementComponentDecorator(GetEntityComponent<EntityHolder>(), Config.ComponentsSettingsHolder
+                .GetComponentSettings<MovementComponentSettings>()));
             
             return base.CreateProduct();
         }

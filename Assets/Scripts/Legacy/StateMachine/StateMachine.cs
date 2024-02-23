@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Components.Interfaces;
 using Interfaces;
 
-namespace Components.StateMachine
+namespace Legacy.StateMachine
 {
+    [Obsolete]
     public class StateMachine : IEntityComponent
     {
         private IState _currentState;

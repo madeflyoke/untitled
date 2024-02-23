@@ -1,4 +1,5 @@
 using System;
+using Components.Interfaces;
 using Components.Settings;
 using Components.Settings.Interfaces;
 using Factories.Components;
@@ -40,6 +41,11 @@ namespace Factories.Units.SubFactories.Base
 #if UNITY_EDITOR
             Debug.LogWarning($"Unit {Config.UnitVariant} decorated with {decorator.GetType().Name}.");
 #endif
+        }
+        
+        protected TComponent GetEntityComponent<TComponent>() where TComponent : IEntityComponent
+        {
+            return _unitEntity.GetEntityComponent<TComponent>();
         }
 
 #if UNITY_EDITOR
