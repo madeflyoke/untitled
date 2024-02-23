@@ -2,6 +2,7 @@ namespace Interfaces
 {
     public interface IDamageable
     {
-        public void TakeDamage(int value);
+        public abstract bool IsAlive { get; }
+        public abstract void TakeDamage(int value);
     }
 }

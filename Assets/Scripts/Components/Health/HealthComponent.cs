@@ -4,15 +4,19 @@ using Interfaces;
 
 namespace Components.Health
 {
-    public class HealthController: IDamageable, IEntityComponent
+    public class HealthComponent: IDamageable, IEntityComponent
     {
+        public bool IsAlive { get; private set; }
+
         public event Action HealthEmptyEvent; 
         private readonly Health _health;
+        
         //health view
 
-        public HealthController(int maxHealth)
+        public HealthComponent(int maxHealth)
         {
             _health = new Health(maxHealth);
+            IsAlive = true;
         }
         
         public void TakeDamage(int value)
@@ -20,6 +24,7 @@ namespace Components.Health
             _health.SubtractHealth(value);
             if (_health.CurrentHealth == 0)
             {
+                IsAlive = false;
                 HealthEmptyEvent?.Invoke();
             }
         }

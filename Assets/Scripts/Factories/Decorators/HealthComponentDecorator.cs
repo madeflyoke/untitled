@@ -22,9 +22,9 @@ namespace Factories.Decorators
             return entity;
         }
 
-        private HealthController CreateHealthController()
+        private HealthComponent CreateHealthController()
         {
-            HealthControllerBuilder builder = new();
+            HealthComponentBuilder builder = new();
 
             return builder
                 .SetMaxHealth(_healthComponentSettings.BaseHealth)

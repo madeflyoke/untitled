@@ -3,6 +3,7 @@ using System.Linq;
 using Components;
 using Factories;
 using Factories.Units;
+using Interfaces;
 using Units.Base;
 using Units.Enums;
 using UnityEngine;
@@ -19,8 +20,8 @@ public class EnemiesSpawner : MonoBehaviour
    [SerializeField] private List<Transform> _enemiesPoints;
    [SerializeField] private List<Transform> _alliesPoints;
 
-   private List<EntityHolder> EnemiesSpawnedUnits { get; } = new();
-   private List<EntityHolder> AlliesSpawnedUnits { get; } = new();
+   private List<UnitEntity> EnemiesSpawnedUnits { get; } = new();
+   private List<UnitEntity> AlliesSpawnedUnits { get; } = new();
    
    private void Awake()
    {
@@ -43,7 +44,7 @@ public class EnemiesSpawner : MonoBehaviour
 
             EnemiesSpawnedUnits.Add(_unitsFactory
                .SetProductRequestData(unitClass, pointTr.position, pointTr.rotation, pointTr)
-               .CreateProduct().GetEntityComponent<EntityHolder>());
+               .CreateProduct());
          }
       }
       //
@@ -59,8 +60,8 @@ public class EnemiesSpawner : MonoBehaviour
       // }
    }
 
-   // private UnitHolder GetClosestEnemy(Vector3 originalPoint)
-   // {
-   //    return EnemiesSpawnedUnits.OrderBy(x => Vector3.Distance(originalPoint, x.transform.position)).FirstOrDefault());
-   // }
+   public UnitEntity GetClosestEnemy(Vector3 originalPoint)
+   {
+      return EnemiesSpawnedUnits.OrderBy(x => Vector3.Distance(originalPoint, x.transform.position)).FirstOrDefault();
+   }
 }

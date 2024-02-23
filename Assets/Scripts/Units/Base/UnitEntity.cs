@@ -16,7 +16,7 @@ namespace Units.Base
         public IEntity AddEntityComponent (IEntityComponent unitEntityComponent)
         {
             var componentType = unitEntityComponent.GetType();
-            if (_components.ContainsKey(componentType)==false) //need it?
+            if (_components.ContainsKey(componentType)==false)
             {
                 _components.Add(componentType, unitEntityComponent);
             }

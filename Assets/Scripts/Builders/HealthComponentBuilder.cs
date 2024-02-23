@@ -4,19 +4,19 @@ using Interfaces;
 
 namespace Builders
 {
-    public class HealthControllerBuilder : IBuilder<HealthController>
+    public class HealthComponentBuilder : IBuilder<HealthComponent>
     {
         private int _maxHealth;
     
-        public HealthControllerBuilder SetMaxHealth(int maxHealth)
+        public HealthComponentBuilder SetMaxHealth(int maxHealth)
         {
             _maxHealth = maxHealth;
             return this;
         }
     
-        public HealthController Build()
+        public HealthComponent Build()
         {
-            return new HealthController (_maxHealth);
+            return new HealthComponent (_maxHealth);
         }
     }
 }
