@@ -1,3 +1,4 @@
+using System;
 using BehaviorDesigner.Runtime.Tasks;
 using BT.Interfaces;
 
@@ -11,10 +12,11 @@ namespace Components.Combat.Actions
         {
             
         }
-        
+
+
         public TaskStatus Execute()
         {
-            return TaskStatus.Failure;
+            return TaskStatus.Success;
         }
     }
 }

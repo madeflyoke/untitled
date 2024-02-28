@@ -27,6 +27,9 @@ namespace Factories.Units.SubFactories
             DecorateBy(new AnimationComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
                 .GetComponentSettings<AnimationComponentSettings>()));
             
+            DecorateBy(new CombatComponentDecorator(Config.ComponentsSettingsHolder
+                .GetComponentSettings<CombatComponentSettings>()));
+            
             return base.CreateProduct();
         }
     }

@@ -7,8 +7,8 @@ using Sirenix.Serialization;
 namespace Components.Settings
 {
     [Serializable]
-    public class AttackActionsHolderSettings : IComponentSettings
+    public class CombatComponentSettings : IComponentSettings
     {
-        [OdinSerialize] public List<IBehaviorAction> Actions;
+        [OdinSerialize] public List<IBehaviorAction> AttackActions;
     }
 }

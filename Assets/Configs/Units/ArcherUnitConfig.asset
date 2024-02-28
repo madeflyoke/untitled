@@ -20,6 +20,7 @@ MonoBehaviour:
     - {fileID: 2655988077585873504, guid: b694cfbed49cce44e8cc48ae6a27e5b4, type: 2}
     - {fileID: 9000000, guid: 84b42445372ad5347aebd5d216a95d4f, type: 3}
     - {fileID: 22100000, guid: 73af6ccbb6dd99447b37c88d8e84b737, type: 2}
+    - {fileID: 5226066545679818644, guid: 5837f5c6cfd2fa7429bacc15595fcf0e, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -34,7 +35,7 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 2|Components.Settings.ModelHolderSettings, Assembly-CSharp
@@ -71,6 +72,34 @@ MonoBehaviour:
     - Name: OverrideAnimatorController
       Entry: 10
       Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|Components.Settings.CombatComponentSettings, Assembly-CSharp
+    - Name: AttackActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[BT.Interfaces.IBehaviorAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|Components.Combat.Actions.ShootProjectile, Assembly-CSharp
+    - Name: _projectilePrefab
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
