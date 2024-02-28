@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BehaviorDesigner.Runtime;
+using BT.Interfaces;
 using BT.Nodes.Actions;
 using BT.Nodes.Conditionals;
 using BT.Shared.Containers;
@@ -8,6 +9,7 @@ using Components.Health;
 using Cysharp.Threading.Tasks;
 using Interfaces;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,6 +20,7 @@ public class UnitTest : MonoBehaviour
     private IDamageable Damageable;
     public NavMeshAgent _agent;
     public BehaviorTree _behaviorTree;
+    [OdinSerialize] public List<IBehaviorAction> _attackActions;
 
     private void Awake()
     {

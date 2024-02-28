@@ -1,5 +1,6 @@
 using Builders;
 using Components.Health;
+using Components.Interfaces;
 using Components.Settings;
 using Interfaces;
 using Units.Base;
@@ -15,11 +16,10 @@ namespace Factories.Decorators
             _healthComponentSettings = healthComponentSettings;
         }
         
-        public IEntity Decorate(IEntity entity)
+        public IEntityComponent Decorate()
         {
             var healthController = CreateHealthController();
-            entity.AddEntityComponent(healthController);
-            return entity;
+            return healthController;
         }
 
         private HealthComponent CreateHealthController()

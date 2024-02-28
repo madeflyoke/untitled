@@ -3,11 +3,11 @@ using UnityEngine.AI;
 
 namespace Components.Movement
 {
-    public class MovementComponent : IEntityComponent
+    public class NavMeshMovementComponent : IEntityComponent
     {
         public NavMeshAgent Agent { get; }
         
-        public MovementComponent(NavMeshAgent agent)
+        public NavMeshMovementComponent(NavMeshAgent agent)
         {
             Agent = agent;
         }

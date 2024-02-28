@@ -1,7 +1,10 @@
+using System.Collections.Generic;
+using Components.Interfaces;
+
 namespace Interfaces
 {
     public interface IEntityDecorator
     {
-        public abstract IEntity Decorate(IEntity entity);
+        public abstract IEntityComponent Decorate();
     }
 }

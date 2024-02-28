@@ -36,7 +36,7 @@ namespace Factories.Units.SubFactories.Base
 
         protected void DecorateBy(IEntityDecorator decorator)
         {
-            decorator.Decorate(_unitEntity);
+            _unitEntity.AddEntityComponent(decorator.Decorate());
             
 #if UNITY_EDITOR
             Debug.LogWarning($"Unit {Config.UnitVariant} decorated with {decorator.GetType().Name}.");

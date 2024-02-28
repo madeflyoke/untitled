@@ -1,9 +1,9 @@
 using Builders.Utility;
 using Components;
+using Components.Interfaces;
 using Components.Settings;
 using Components.View;
 using Interfaces;
-using Units.Base;
 using UnityEngine;
 
 namespace Factories.Decorators
@@ -11,17 +11,18 @@ namespace Factories.Decorators
     public class ModelHolderDecorator : IEntityDecorator
     {
         private readonly ModelHolderSettings _modelHolderSettings;
+        private readonly EntityHolder _entityHolder;
         
-        public ModelHolderDecorator(ModelHolderSettings modelHolderSettings)
+        public ModelHolderDecorator(EntityHolder entityHolder, ModelHolderSettings modelHolderSettings)
         {
             _modelHolderSettings = modelHolderSettings;
+            _entityHolder = entityHolder;
         }
         
-        public IEntity Decorate(IEntity entity)
+        public IEntityComponent Decorate()
         {
-            var modelHolder = CreateModelHolder(entity.GetEntityComponent<EntityHolder>().ViewTransform);
-            entity.AddEntityComponent(modelHolder);
-            return entity;
+            var modelHolder = CreateModelHolder(_entityHolder.ViewTransform);
+            return modelHolder;
         }
         
         private ModelHolder CreateModelHolder(Transform parent)

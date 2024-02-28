@@ -13,14 +13,19 @@ namespace Factories.Units.SubFactories
     {
         public override UnitEntity CreateProduct()
         {
-            DecorateBy(new ModelHolderDecorator(Config.ComponentsSettingsHolder
+            var entityHolder = GetEntityComponent<EntityHolder>();
+            
+            DecorateBy(new ModelHolderDecorator(entityHolder, Config.ComponentsSettingsHolder
                 .GetComponentSettings<ModelHolderSettings>()));
             
             DecorateBy(new HealthComponentDecorator(Config.ComponentsSettingsHolder
                 .GetComponentSettings<HealthComponentSettings>()));
             
-            DecorateBy(new MovementComponentDecorator(GetEntityComponent<EntityHolder>(), Config.ComponentsSettingsHolder
+            DecorateBy(new NavMeshMovementComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
                 .GetComponentSettings<MovementComponentSettings>()));
+            
+            DecorateBy(new AnimationComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
+                .GetComponentSettings<AnimationComponentSettings>()));
             
             return base.CreateProduct();
         }

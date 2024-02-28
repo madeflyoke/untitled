@@ -7,22 +7,22 @@ namespace BehaviorDesigner.Runtime
 {
     // Wrapper for the Behavior class
     [AddComponentMenu("Behavior Designer/Behavior Tree")]
-    [RequireComponent(typeof(BehaviourTreeCachedVariablesHolder))]
+    [RequireComponent(typeof(BehaviorTreeCachedVariablesHolder))]
     public class BehaviorTree : Behavior
     {
         // intentionally left blank
-        [SerializeField] private BehaviourTreeCachedVariablesHolder cachedVariablesHolder;
+        [SerializeField] private BehaviorTreeCachedVariablesHolder cachedVariablesHolder;
 
-        public BehaviourTreeCachedVariablesHolder GetCachedVariablesHolder()
+        public BehaviorTreeCachedVariablesHolder GetCachedVariablesHolder()
         {
-            return cachedVariablesHolder ??= GetComponent<BehaviourTreeCachedVariablesHolder>();
+            return cachedVariablesHolder ??= GetComponent<BehaviorTreeCachedVariablesHolder>();
         }
 
 #if UNITY_EDITOR
         
         private void OnValidate()
         {
-            cachedVariablesHolder ??= GetComponent<BehaviourTreeCachedVariablesHolder>();
+            cachedVariablesHolder ??= GetComponent<BehaviorTreeCachedVariablesHolder>();
         }
         
 #endif

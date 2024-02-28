@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace BT.Tools
 {
-    public class BehaviourTreeCachedVariablesHolder : SerializedMonoBehaviour
+    public class BehaviorTreeCachedVariablesHolder : SerializedMonoBehaviour
     {
         [SerializeField] private BehaviorTree _behaviorTree;
         [OdinSerialize, ReadOnly] private Dictionary<Type, SharedVariable> _sharedVariables;
