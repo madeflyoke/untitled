@@ -1,19 +1,21 @@
 using System.Collections.Generic;
-using BT.Interfaces;
+using Components.Animation;
+using Components.Combat.Actions;
 using Components.Interfaces;
 
 namespace Components.Combat
 {
     public class CombatComponent : IEntityComponent
     {
-        private readonly List<IBehaviorAction> _attackActions;
+        private readonly List<CombatAction> _combatActions;
 
-        public CombatComponent(List<IBehaviorAction> actions)
+        public CombatComponent(List<CombatAction> actions, AnimationComponent animationComponent)
         {
-            _attackActions = actions;
+            _combatActions = actions;
+            _combatActions.ForEach(x=>x.Initialize(animationComponent));
         }
         
-        public List<IBehaviorAction> GetAttackActions() => _attackActions;
+        public List<CombatAction> GetCombatActions() => _combatActions;
 
     }
 }

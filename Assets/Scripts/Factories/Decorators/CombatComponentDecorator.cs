@@ -1,4 +1,5 @@
 using Builders;
+using Components.Animation;
 using Components.Combat;
 using Components.Interfaces;
 using Components.Settings;
@@ -8,11 +9,13 @@ namespace Factories.Decorators
 {
     public class CombatComponentDecorator : IEntityDecorator
     {
-        private CombatComponentSettings _combatComponentSettings;
+        private readonly CombatComponentSettings _combatComponentSettings;
+        private readonly AnimationComponent _animationComponent;
 
-        public CombatComponentDecorator(CombatComponentSettings combatComponentSettings)
+        public CombatComponentDecorator(CombatComponentSettings combatComponentSettings, AnimationComponent animationComponent)
         {
             _combatComponentSettings = combatComponentSettings;
+            _animationComponent = animationComponent;
         }
         
         public IEntityComponent Decorate()
@@ -22,10 +25,10 @@ namespace Factories.Decorators
 
         private CombatComponent CreateCombatComponent()
         {
-            var builder = new CombatComponentBuilder();
+            var builder = new CombatComponentBuilder(_animationComponent);
 
             return builder
-                .AddAttackActions(_combatComponentSettings.AttackActions)
+                .AddAttackActions(_combatComponentSettings.CombatActions)
                 .Build();
         }
     }

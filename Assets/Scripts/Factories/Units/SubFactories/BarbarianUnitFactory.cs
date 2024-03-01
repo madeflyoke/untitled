@@ -1,4 +1,5 @@
 using Components;
+using Components.Animation;
 using Components.Settings;
 using Factories.Decorators;
 using Factories.Units.SubFactories.Attributes;
@@ -28,7 +29,7 @@ namespace Factories.Units.SubFactories
                 .GetComponentSettings<AnimationComponentSettings>()));
             
             DecorateBy(new CombatComponentDecorator(Config.ComponentsSettingsHolder
-                .GetComponentSettings<CombatComponentSettings>()));
+                .GetComponentSettings<CombatComponentSettings>(), GetEntityComponent<AnimationComponent>()));
             
             return base.CreateProduct();
         }

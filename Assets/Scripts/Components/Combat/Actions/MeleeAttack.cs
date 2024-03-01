@@ -1,22 +1,34 @@
-using System;
 using BehaviorDesigner.Runtime.Tasks;
-using BT.Interfaces;
+using UnityEngine;
+using Utility;
 
 namespace Components.Combat.Actions
 {
-    public class MeleeAttack : IBehaviorAction
+    public class MeleeAttack : CombatAction
     {
+        private bool _finished;
         
-        
-        public void Initialize()
+        public override TaskStatus GetCurrentStatus()
         {
-            
+            if (_finished)
+            {
+                return TaskStatus.Success;
+            }
+            return TaskStatus.Running;
         }
 
-
-        public TaskStatus Execute()
+        public override void Execute()
         {
-            return TaskStatus.Success;
+            _finished = false;
+            Debug.LogWarning("attack animation...");
+            AnimationComponent.PlayCustomAnimation(AnimationNames.Combat, ActionAnimation);
+            AnimationComponent.AnimationEventsListener.OnCurrentAnimationEnd += SetFinished;
+        }
+
+        private void SetFinished()
+        {
+            _finished = true;
+            AnimationComponent.AnimationEventsListener.OnCurrentAnimationEnd -= SetFinished;
         }
     }
 }

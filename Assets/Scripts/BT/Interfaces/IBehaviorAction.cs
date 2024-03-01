@@ -4,6 +4,7 @@ namespace BT.Interfaces
 {
     public interface IBehaviorAction
     {
-        public abstract TaskStatus Execute();
+        public abstract TaskStatus GetCurrentStatus();
+        public abstract void Execute();
     }
 }

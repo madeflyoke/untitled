@@ -6,14 +6,18 @@ using UnityEngine;
 
 namespace Components.Combat.Actions
 {
-    [Serializable]
-    public class ShootProjectile : IBehaviorAction
+    public class ShootProjectile : CombatAction
     {
         [SerializeField] private Projectile _projectilePrefab;
 
-        public TaskStatus Execute()
+        public override TaskStatus GetCurrentStatus()
         {
-            return TaskStatus.Failure;
+            return TaskStatus.Running;
+        }
+
+        public override void Execute()
+        {
+            
         }
     }
 }

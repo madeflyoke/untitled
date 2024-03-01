@@ -17,8 +17,7 @@ namespace BT.Tools
         {
             return (TVariable) _sharedVariables[typeof(TVariable)];
         }
-
-
+        
 #if UNITY_EDITOR
         
         private void Setup()

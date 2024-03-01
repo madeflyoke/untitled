@@ -20,7 +20,12 @@ namespace BT.Nodes.Actions
             _agent = agent;
             return this;
         }
-        
+
+        public override void OnStart()
+        {
+            _agent.isStopped = false;
+        }
+
         public override TaskStatus OnUpdate()
         {
             _agent.destination = _targetPoint.Value;

@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &121166432
+--- !u!1 &568721313
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,978 +131,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 121166434}
-  - component: {fileID: 121166433}
-  - component: {fileID: 121166435}
-  - component: {fileID: 121166437}
-  - component: {fileID: 121166438}
+  - component: {fileID: 568721315}
+  - component: {fileID: 568721314}
   m_Layer: 0
-  m_Name: Main
+  m_Name: NamesGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &121166433
+--- !u!114 &568721314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121166432}
+  m_GameObject: {fileID: 568721313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Script: {fileID: 11500000, guid: e9079275e8e8c2d45b45f921c4904647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWhenEnabled: 0
-  asynchronousLoad: 0
-  pauseWhenDisabled: 0
-  restartWhenComplete: 0
-  logTaskChanges: 0
-  group: 0
-  resetValuesOnRestart: 0
-  externalBehavior: {fileID: 0}
-  mBehaviorSource:
-    behaviorName: Behavior
-    behaviorDescription: 
-    mTaskData:
-      types: []
-      parentIndex: 
-      startIndex: 
-      variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(234.041672,-0.00833511353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-0.124965668,107.038788)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.95830727,131.007553)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"BT.Nodes.Conditionals.InPreparingProcess","NodeData":{"Offset":"(-989.3988,256.9214)"},"ID":3,"Name":"In
-        Preparing Process","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-720.4841,261.9742)"},"ID":4,"Name":"MoveTowardsTargetSequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-188.690109,214.126862)"},"ID":5,"Name":"TargetCheckSelector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BT.Nodes.Conditionals.ValidateDamageableTarget","NodeData":{"Offset":"(-128.744568,151.351624)"},"ID":6,"Name":"Validate
-        Damageable Target","Instant":true},{"Type":"BT.Nodes.Actions.FindClosestDamageableTarget","NodeData":{"Offset":"(88.045,148.788086)"},"ID":7,"Name":"Find
-        Closest Damageable Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(108.697342,220.8996)"},"ID":8,"Name":"Inverter","Instant":true,"Children":[{"Type":"BT.Nodes.Conditionals.IsTargetWithinRange","NodeData":{"Offset":"(3.87097549,110)"},"ID":9,"Name":"Is
-        Target Within Range","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(404.7459,215.624878)"},"ID":10,"Name":"MoveTowardsTargetSequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BT.Nodes.Actions.SetClosestNavMeshPoint","NodeData":{"Offset":"(-49.06434,131.052612)"},"ID":11,"Name":"Set
-        Closest Nav Mesh Point","Instant":true},{"Type":"BT.Nodes.Actions.MoveToPoint","NodeData":{"Offset":"(138.508759,127.894722)"},"ID":12,"Name":"Move
-        To Point","Instant":true}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(-360.3446,273.103333)"},"ID":13,"Name":"Idle","Instant":true}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1115.8811,600)"},"ID":14,"Name":"SetTargetSelector","Instant":true,"AbortTypeabortType":"None"}],"Variables":[{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedDamageableTargetDamageable":{"Type":"BT.Shared.SharedDamageable","Name":null},"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}},{"Type":"BT.Shared.Containers.SelfDataSharedContainerVariable","Name":"SelfDataContainer","IsShared":true,"SelfDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}}]}'
-      fieldSerializationData:
-        typeName: []
-        fieldNameHash: 
-        startIndex: 
-        dataPosition: 
-        unityObjects: []
-        byteData: 
-        byteDataArray: 
-      Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
-  cachedVariablesHolder: {fileID: 121166438}
---- !u!4 &121166434
+  _path: Assets/Scripts/BT/Utility
+  _behaviorTree: {fileID: 11400000, guid: 07a373a7193ea3647b6fd3e2e150e67f, type: 2}
+--- !u!4 &568721315
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121166432}
+  m_GameObject: {fileID: 568721313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.54, y: 1.52, z: 0}
-  m_LocalScale: {x: 2.1579, y: 2.1579, z: 2.1579}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2000672979}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &121166435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121166432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e23d26e7e8770647ba1ac86f4c7ff8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemies:
-  - {fileID: 742014246}
-  _agent: {fileID: 121166437}
-  _behaviorTree: {fileID: 121166433}
---- !u!195 &121166437
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121166432}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &121166438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121166432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592cf10d66cba3b49a411b910905c72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _sharedVariables
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.Type, mscorlib],[BehaviorDesigner.Runtime.SharedVariable,
-        BehaviorDesigner.Runtime]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[System.Type, mscorlib]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 2|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 3|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: DamageableTargetContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 4|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
-    - Name: TargetDamageable
-      Entry: 7
-      Data: 5|BT.Shared.SharedDamageable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: TargetTransform
-      Entry: 7
-      Data: 6|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 7|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 8|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: MovementContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 9|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
-    - Name: CurrentDestinationPoint
-      Entry: 7
-      Data: 10|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 11|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.SelfDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 12|BT.Shared.Containers.SelfDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfDataContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 13|BT.Shared.Containers.SelfDataSharedContainer, Assembly-CSharp
-    - Name: SelfTransform
-      Entry: 7
-      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  _behaviorTree: {fileID: 121166433}
---- !u!1 &513488276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 513488277}
-  - component: {fileID: 513488280}
-  - component: {fileID: 513488279}
-  - component: {fileID: 513488278}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &513488277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513488276}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.6743817, y: 19.485191, z: 21.811941}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 742014248}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &513488278
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513488276}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &513488279
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513488276}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &513488280
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513488276}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &742014243
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 742014248}
-  - component: {fileID: 742014247}
-  - component: {fileID: 742014246}
-  - component: {fileID: 742014245}
-  - component: {fileID: 742014244}
-  m_Layer: 0
-  m_Name: UnitBehaviourTree (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &742014244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742014243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 592cf10d66cba3b49a411b910905c72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: _sharedVariables
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.Type, mscorlib],[BehaviorDesigner.Runtime.SharedVariable,
-        BehaviorDesigner.Runtime]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[System.Type, mscorlib]],
-        mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 2|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 3|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: DamageableTargetContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 4|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
-    - Name: TargetDamageable
-      Entry: 7
-      Data: 5|BT.Shared.SharedDamageable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: TargetTransform
-      Entry: 7
-      Data: 6|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 7|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 8|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: MovementContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 9|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
-    - Name: CurrentDestinationPoint
-      Entry: 7
-      Data: 10|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 11|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: BT.Shared.Containers.SelfDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 12|BT.Shared.Containers.SelfDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfDataContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 13|BT.Shared.Containers.SelfDataSharedContainer, Assembly-CSharp
-    - Name: SelfTransform
-      Entry: 7
-      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  _behaviorTree: {fileID: 742014247}
---- !u!195 &742014245
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742014243}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &742014246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742014243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e23d26e7e8770647ba1ac86f4c7ff8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemies: []
-  _agent: {fileID: 742014245}
-  _behaviorTree: {fileID: 742014247}
---- !u!114 &742014247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742014243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startWhenEnabled: 0
-  asynchronousLoad: 0
-  pauseWhenDisabled: 0
-  restartWhenComplete: 0
-  logTaskChanges: 0
-  group: 0
-  resetValuesOnRestart: 0
-  externalBehavior: {fileID: 0}
-  mBehaviorSource:
-    behaviorName: Behavior
-    behaviorDescription: 
-    mTaskData:
-      types: []
-      parentIndex: 
-      startIndex: 
-      variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(234.041672,-0.00833511353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-0.124965668,107.038788)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-4.95830727,131.007538)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BT.Nodes.Conditionals.InPreparingProcess","NodeData":{"Offset":"(-907.371643,239.680008)"},"ID":3,"Name":"In
-        Preparing Process","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-701.7029,235.584473)"},"ID":4,"Name":"SetTargetSequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnFailure","NodeData":{"Offset":"(-95.11037,119.314705)"},"ID":5,"Name":"Return
-        Failure","Instant":true,"Children":[{"Type":"BT.Nodes.Conditionals.ValidateDamageableTarget","NodeData":{"Offset":"(0,97.36843)"},"ID":6,"Name":"Validate
-        Damageable Target","Instant":true}]},{"Type":"BT.Nodes.Actions.FindClosestDamageableTarget","NodeData":{"Offset":"(105.314316,123.659874)"},"ID":7,"Name":"Find
-        Closest Damageable Target","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-292.155945,236.933136)"},"ID":8,"Name":"MovementSequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BT.Nodes.Actions.SetClosestNavMeshPoint","NodeData":{"Offset":"(-72.94113,211.764954)"},"ID":9,"Name":"Set
-        Closest Nav Mesh Point","Instant":true},{"Type":"BT.Nodes.Actions.MoveToPoint","NodeData":{"Offset":"(112.353027,211.764954)"},"ID":10,"Name":"Move
-        To Point","Instant":true}]}]}]},"Variables":[{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}},{"Type":"BT.Shared.Containers.SelfDataSharedContainerVariable","Name":"SelfDataContainer","IsShared":true,"SelfDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}}]}'
-      fieldSerializationData:
-        typeName: []
-        fieldNameHash: 
-        startIndex: 
-        dataPosition: 
-        unityObjects: []
-        byteData: 
-        byteDataArray: 
-      Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
-  cachedVariablesHolder: {fileID: 742014244}
---- !u!4 &742014248
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742014243}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: 1.52, z: 1.8}
-  m_LocalScale: {x: 2.1579, y: 2.1579, z: 2.1579}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 513488277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063733473
@@ -1361,6 +425,68 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1783728303
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6249871077138340054}
+    m_Modifications:
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390322646971177852, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+      propertyPath: m_Name
+      value: BarbarianModelHolder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+--- !u!4 &1783728304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2349284627918634117, guid: 352f5a96847c7a9488a7541f0023c5da, type: 3}
+  m_PrefabInstance: {fileID: 1783728303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1918572427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +624,386 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!1 &2000672978
+--- !u!114 &418983548997230209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592cf10d66cba3b49a411b910905c72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _sharedVariables
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Type, mscorlib],[BehaviorDesigner.Runtime.SharedVariable,
+        BehaviorDesigner.Runtime]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[System.Type, mscorlib]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 2|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 3|BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfCombatContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 4|BT.Shared.Containers.SelfCombatDataSharedContainer, Assembly-CSharp
+    - Name: AttackActionsSequence
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[BT.Interfaces.IBehaviorAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 6|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 7|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: DamageableTargetContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 8|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
+    - Name: TargetDamageable
+      Entry: 7
+      Data: 9|BT.Shared.SharedDamageable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TargetTransform
+      Entry: 7
+      Data: 10|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 11|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 12|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfGeneralContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 13|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
+    - Name: SelfTransform
+      Entry: 7
+      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 15|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 16|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: MovementContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 17|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
+    - Name: CurrentDestinationPoint
+      Entry: 7
+      Data: 18|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _behaviorTree: {fileID: 3582919401124176407}
+--- !u!1 &668123381397720451
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1506,10 +1011,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2000672979}
-  - component: {fileID: 2000672982}
-  - component: {fileID: 2000672981}
-  - component: {fileID: 2000672980}
+  - component: {fileID: 4145433996863354027}
+  - component: {fileID: 7432609578364672501}
+  - component: {fileID: 6406564220178851683}
+  - component: {fileID: 4883715201182092074}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1517,28 +1022,267 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2000672979
+--- !u!114 &1259990810245137577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e23d26e7e8770647ba1ac86f4c7ff8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 7400000, guid: eccbae3cfc77ad245ade46e143aa3200, type: 2}
+    - {fileID: 7400000, guid: 6019f1b4a095b0b4396f5561a51fee89, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _attackActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Components.Combat.Actions.CombatAction,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 1|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
+    - Name: <ActionAnimation>k__BackingField
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
+    - Name: <ActionAnimation>k__BackingField
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
+    - Name: <ActionAnimation>k__BackingField
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
+    - Name: <ActionAnimation>k__BackingField
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _enemies:
+  - {fileID: 3360116661007228154}
+  _agent: {fileID: 6067995998463348018}
+  _behaviorTree: {fileID: 3582919401124176407}
+  _animator: {fileID: 8472034709428162096}
+--- !u!4 &2729287120256077499
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000672978}
+  m_GameObject: {fileID: 3571587114799721000}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.821407, y: -18.119572, z: -19.951683}
+  m_LocalScale: {x: 2.1579, y: 2.1579, z: 2.1579}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4145433996863354027}
+  m_Father: {fileID: 6012465321689685936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3360116661007228154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571587114799721000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e23d26e7e8770647ba1ac86f4c7ff8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _attackActions
+      Entry: 6
+      Data: 
+  _enemies: []
+  _agent: {fileID: 6781067095655420490}
+  _behaviorTree: {fileID: 3385940671810047435}
+  _animator: {fileID: 0}
+--- !u!114 &3385940671810047435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571587114799721000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 0
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 11400000, guid: 07a373a7193ea3647b6fd3e2e150e67f, type: 2}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"Variables":[{"Type":"BT.Shared.Containers.SelfCombatDataSharedContainerVariable","Name":"SelfCombatContainer","IsShared":true,"SelfCombatDataSharedContainermValue":{"List`1AttackActionsSequence":[]}},{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedDamageableTargetDamageable":{"Type":"BT.Shared.SharedDamageable","Name":null},"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.SelfGeneralDataSharedContainerVariable","Name":"SelfGeneralContainer","IsShared":true,"SelfGeneralDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.7
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+  cachedVariablesHolder: {fileID: 6759889470665964968}
+--- !u!1 &3571587114799721000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2729287120256077499}
+  - component: {fileID: 3385940671810047435}
+  - component: {fileID: 3360116661007228154}
+  - component: {fileID: 6781067095655420490}
+  - component: {fileID: 6759889470665964968}
+  m_Layer: 0
+  m_Name: UnitBehaviourTree (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3582919401124176407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWhenEnabled: 0
+  asynchronousLoad: 0
+  pauseWhenDisabled: 0
+  restartWhenComplete: 0
+  logTaskChanges: 0
+  group: 0
+  resetValuesOnRestart: 0
+  externalBehavior: {fileID: 11400000, guid: 07a373a7193ea3647b6fd3e2e150e67f, type: 2}
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"Variables":[{"Type":"BT.Shared.Containers.SelfCombatDataSharedContainerVariable","Name":"SelfCombatContainer","IsShared":true,"SelfCombatDataSharedContainermValue":{"List`1AttackActionsSequence":[]}},{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedDamageableTargetDamageable":{"Type":"BT.Shared.SharedDamageable","Name":null},"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.SelfGeneralDataSharedContainerVariable","Name":"SelfGeneralContainer","IsShared":true,"SelfGeneralDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects: []
+        byteData: 
+        byteDataArray: 
+      Version: 1.7.7
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+  cachedVariablesHolder: {fileID: 418983548997230209}
+--- !u!1 &4084323336156078581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6012465321689685936}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4145433996863354027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668123381397720451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 121166434}
+  m_Father: {fileID: 2729287120256077499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2000672980
+--- !u!65 &4883715201182092074
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000672978}
+  m_GameObject: {fileID: 668123381397720451}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1553,13 +1297,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &2000672981
+--- !u!4 &6012465321689685936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084323336156078581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.021407, y: 19.639572, z: 21.751682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6249871077138340054}
+  - {fileID: 2729287120256077499}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &6067995998463348018
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!4 &6249871077138340054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -26.518595, y: -19.32, z: -21.751682}
+  m_LocalScale: {x: 2.1579, y: 2.1579, z: 2.1579}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1783728304}
+  m_Father: {fileID: 6012465321689685936}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &6406564220178851683
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000672978}
+  m_GameObject: {fileID: 668123381397720451}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1595,20 +1394,477 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2000672982
+--- !u!114 &6759889470665964968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571587114799721000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592cf10d66cba3b49a411b910905c72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _sharedVariables
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Type, mscorlib],[BehaviorDesigner.Runtime.SharedVariable,
+        BehaviorDesigner.Runtime]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[System.Type, mscorlib]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 2|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 3|BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfCombatContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 4|BT.Shared.Containers.SelfCombatDataSharedContainer, Assembly-CSharp
+    - Name: AttackActionsSequence
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[BT.Interfaces.IBehaviorAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 6|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 7|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: DamageableTargetContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 8|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
+    - Name: TargetDamageable
+      Entry: 7
+      Data: 9|BT.Shared.SharedDamageable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TargetTransform
+      Entry: 7
+      Data: 10|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 11|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 12|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfGeneralContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 13|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
+    - Name: SelfTransform
+      Entry: 7
+      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 15|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 16|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: MovementContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 17|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
+    - Name: CurrentDestinationPoint
+      Entry: 7
+      Data: 18|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  _behaviorTree: {fileID: 3385940671810047435}
+--- !u!195 &6781067095655420490
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571587114799721000}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!33 &7432609578364672501
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000672978}
+  m_GameObject: {fileID: 668123381397720451}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &8472034709428162095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6249871077138340054}
+  - component: {fileID: 3582919401124176407}
+  - component: {fileID: 1259990810245137577}
+  - component: {fileID: 6067995998463348018}
+  - component: {fileID: 418983548997230209}
+  - component: {fileID: 8472034709428162096}
+  - component: {fileID: 8472034709428162097}
+  m_Layer: 0
+  m_Name: Main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &8472034709428162096
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: a58d63122b09e9144938cd6a1ece4824, type: 3}
+  m_Controller: {fileID: 22100000, guid: b6ba0e2dc885e634c927a3d40c352e15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8472034709428162097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472034709428162095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d544a7dc5fe5d4188a773fa2d6faf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8472034709428162096}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1918572430}
   - {fileID: 1176600735}
-  - {fileID: 121166434}
-  - {fileID: 742014248}
   - {fileID: 1063733478}
+  - {fileID: 568721315}
+  - {fileID: 6012465321689685936}

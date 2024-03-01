@@ -9,16 +9,23 @@ namespace Builders
         private readonly GameObject _componentsHolder;
         private Avatar _avatar;
         private RuntimeAnimatorController _animatorController;
+        private AnimationEventsListener _animationEventsListener;
 
         public AnimationComponentBuilder(GameObject componentsHolder)
         {
             _componentsHolder = componentsHolder;
         }
         
-        public AnimationComponentBuilder AddAnimatorData(Avatar avatar, RuntimeAnimatorController animatorController)
+        public AnimationComponentBuilder SetAnimatorData(Avatar avatar, RuntimeAnimatorController animatorController)
         {
             _avatar = avatar;
             _animatorController = animatorController;
+            return this;
+        }
+
+        public AnimationComponentBuilder AddAnimationEventsListener()
+        {
+            _animationEventsListener = _componentsHolder.AddComponent<AnimationEventsListener>();
             return this;
         }
         
@@ -28,7 +35,7 @@ namespace Builders
             animator.avatar = _avatar;
             animator.runtimeAnimatorController = _animatorController;
             
-            return new AnimationComponent(animator);
+            return new AnimationComponent(animator, _animationEventsListener);
         }
         
     }

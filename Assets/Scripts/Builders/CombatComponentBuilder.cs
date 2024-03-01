@@ -1,23 +1,30 @@
 using System.Collections.Generic;
-using BT.Interfaces;
 using Builders.Interfaces;
+using Components.Animation;
 using Components.Combat;
+using Components.Combat.Actions;
 
 namespace Builders
 {
     public class CombatComponentBuilder : IBuilder<CombatComponent>
     {
-        private List<IBehaviorAction> _attackActions;
-
-        public CombatComponentBuilder AddAttackActions (List<IBehaviorAction> actions)
+        private List<CombatAction> _combatActions;
+        private readonly AnimationComponent _animationComponent;
+            
+        public CombatComponentBuilder(AnimationComponent animationComponent)
         {
-            _attackActions = actions;
+            _animationComponent = animationComponent;
+        }
+
+        public CombatComponentBuilder AddAttackActions (List<CombatAction> actions)
+        {
+            _combatActions = actions;
             return this;
         }
         
         public CombatComponent Build()
         {
-            return new CombatComponent(_attackActions);
+            return new CombatComponent(_combatActions,_animationComponent);
         }
     }
 }

@@ -22,7 +22,8 @@ namespace Factories.Decorators
             var builder = new AnimationComponentBuilder(_entityHolder.SelfTransform.gameObject);
             
             return builder
-                .AddAnimatorData(_animationComponentSettings.Avatar, _animationComponentSettings.OverrideAnimatorController)
+                .SetAnimatorData(_animationComponentSettings.Avatar, _animationComponentSettings.OverrideAnimatorController)
+                .AddAnimationEventsListener()
                 .Build();;
         }
     }
