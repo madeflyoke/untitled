@@ -1051,40 +1051,67 @@ MonoBehaviour:
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
-    - Name: <ActionAnimation>k__BackingField
+    - Name: <AnimationClipData>k__BackingField
+      Entry: 7
+      Data: 2|Components.Animation.AnimationClipData, Assembly-CSharp
+    - Name: <AnimationClip>k__BackingField
       Entry: 10
       Data: 0
+    - Name: <TargetStateName>k__BackingField
+      Entry: 1
+      Data: CombatAction
+    - Name: <TransitionDuration>k__BackingField
+      Entry: 4
+      Data: 0.25
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 7
-      Data: 2|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
-    - Name: <ActionAnimation>k__BackingField
-      Entry: 10
-      Data: 1
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
       Data: 3|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
-    - Name: <ActionAnimation>k__BackingField
+    - Name: <AnimationClipData>k__BackingField
+      Entry: 7
+      Data: 4|Components.Animation.AnimationClipData, Assembly-CSharp
+    - Name: <AnimationClip>k__BackingField
       Entry: 10
-      Data: 1
+      Data: 0
+    - Name: <TargetStateName>k__BackingField
+      Entry: 1
+      Data: CombatAction
+    - Name: <TransitionDuration>k__BackingField
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
-    - Name: <ActionAnimation>k__BackingField
+      Data: 5|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
+    - Name: <AnimationClipData>k__BackingField
+      Entry: 7
+      Data: 6|Components.Animation.AnimationClipData, Assembly-CSharp
+    - Name: <AnimationClip>k__BackingField
       Entry: 10
-      Data: 0
+      Data: 1
+    - Name: <TargetStateName>k__BackingField
+      Entry: 1
+      Data: CombatAction
+    - Name: <TransitionDuration>k__BackingField
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1817,7 +1844,6 @@ GameObject:
   - component: {fileID: 6067995998463348018}
   - component: {fileID: 418983548997230209}
   - component: {fileID: 8472034709428162096}
-  - component: {fileID: 8472034709428162097}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -1846,19 +1872,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8472034709428162097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8472034709428162095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d544a7dc5fe5d4188a773fa2d6faf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 8472034709428162096}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

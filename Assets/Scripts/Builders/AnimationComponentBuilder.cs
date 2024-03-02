@@ -9,8 +9,9 @@ namespace Builders
         private readonly GameObject _componentsHolder;
         private Avatar _avatar;
         private RuntimeAnimatorController _animatorController;
-        private AnimationEventsListener _animationEventsListener;
-
+        
+        private bool _animationEventsListener;
+        
         public AnimationComponentBuilder(GameObject componentsHolder)
         {
             _componentsHolder = componentsHolder;
@@ -25,7 +26,7 @@ namespace Builders
 
         public AnimationComponentBuilder AddAnimationEventsListener()
         {
-            _animationEventsListener = _componentsHolder.AddComponent<AnimationEventsListener>();
+            _animationEventsListener = true;
             return this;
         }
         
@@ -34,9 +35,14 @@ namespace Builders
             var animator = _componentsHolder.AddComponent<Animator>();
             animator.avatar = _avatar;
             animator.runtimeAnimatorController = _animatorController;
+
+            AnimationEventsListener animationEventsListener = null;
+            if (_animationEventsListener)
+            {
+                animationEventsListener = _componentsHolder.AddComponent<AnimationEventsListener>();
+            }
             
-            return new AnimationComponent(animator, _animationEventsListener);
+            return new AnimationComponent(animator, animationEventsListener);
         }
-        
     }
 }

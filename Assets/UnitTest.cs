@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using BehaviorDesigner.Runtime;
-using BehaviorDesigner.Runtime.Tasks;
 using BT.Interfaces;
 using BT.Nodes.Actions;
 using BT.Nodes.Conditionals;
 using BT.Shared.Containers;
-using Components;
 using Components.Animation;
+using Components.Animation.Interfaces;
 using Components.Combat.Actions;
 using Components.Health;
 using Cysharp.Threading.Tasks;
 using Interfaces;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Sirenix.Utilities;
 using Units.Base;
 using UnityEngine;
 using UnityEngine.AI;
@@ -74,11 +74,16 @@ public class UnitTest : SerializedMonoBehaviour
 
         var animationComponent = new AnimationComponent(_animator, gameObject.AddComponent<AnimationEventsListener>());
         
-        _attackActions.ForEach(x=>x.Initialize(animationComponent));
+        RegisterCallOnAnimation(animationComponent);
         
         _behaviorTree.FindTask<ProcessActions>().Initialize(_attackActions.Cast<IBehaviorAction>().ToList());
         
         _behaviorTree.EnableBehavior();
+    }
+
+    public void RegisterCallOnAnimation(AnimationComponent animationComponent)
+    {
+        _attackActions.Cast<IAnimationCaller>().ForEach(x => animationComponent.RegisterAnimationCaller(ref x));
     }
 
     [Button]

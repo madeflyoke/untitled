@@ -88,9 +88,24 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|Components.Combat.Actions.MeleeAttack, Assembly-CSharp
-    - Name: <ActionAnimation>k__BackingField
+    - Name: CallOnAnimation
+      Entry: 6
+      Data: 
+    - Name: <AnimationClipData>k__BackingField
+      Entry: 7
+      Data: 9|Components.Animation.AnimationClipData, Assembly-CSharp
+    - Name: <AnimationClip>k__BackingField
       Entry: 10
       Data: 4
+    - Name: <TargetStateName>k__BackingField
+      Entry: 1
+      Data: CombatAction
+    - Name: <TransitionDuration>k__BackingField
+      Entry: 4
+      Data: 0.25
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

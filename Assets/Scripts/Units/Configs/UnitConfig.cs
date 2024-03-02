@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using Components.Settings;
-using Components.Settings.Interfaces;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using Units.Enums;
@@ -18,12 +14,5 @@ namespace Units.Configs
         
         [BoxGroup("ComponentsSettings")] 
         [field: OdinSerialize] public ComponentsSettingsHolder ComponentsSettingsHolder { get; private set; }= new();
-
-        // [BoxGroup("CommonStats")]
-        // [field: SerializeField] public float BaseAttackDamage = 5f;
-        // [BoxGroup("CommonStats")]
-        // [field: SerializeField] public float BaseMovementSpeed = 5f;
-        // [BoxGroup("CommonStats")]
-        // [field: SerializeField] public float AttackRange = 5f;
     }
 }

@@ -4,9 +4,8 @@ using System.Reflection;
 
 namespace Utility
 {
-    public static class AnimationNames
+    public static class AnimatorStatesNames
     {
-        public static string None = "None";
         public static string Idle = "Idle";
         public static string Moving = "Moving";
         public static string Combat = "CombatAction";
@@ -17,7 +16,7 @@ namespace Utility
         {
             List<string> animationList = new List<string>();
 
-            Type animationType = typeof(AnimationNames);
+            Type animationType = typeof(AnimatorStatesNames);
             FieldInfo[] fields = animationType.GetFields(BindingFlags.Public | BindingFlags.Static);
 
             foreach (FieldInfo field in fields)

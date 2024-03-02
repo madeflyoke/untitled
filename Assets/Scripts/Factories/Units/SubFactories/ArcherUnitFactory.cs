@@ -1,5 +1,5 @@
 ﻿using Components;
-using Components.Animation;
+using Components.Animation.Interfaces;
 using Components.Settings;
 using Factories.Decorators;
 using Factories.Units.SubFactories.Attributes;
@@ -25,11 +25,12 @@ namespace Factories.Units.SubFactories
             DecorateBy(new NavMeshMovementComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
                 .GetComponentSettings<MovementComponentSettings>()));
 
-            DecorateBy(new AnimationComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
+            var animationComponent = DecorateBy(new AnimationComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
                 .GetComponentSettings<AnimationComponentSettings>()));
             
             DecorateBy(new CombatComponentDecorator(Config.ComponentsSettingsHolder
-                .GetComponentSettings<CombatComponentSettings>(), GetEntityComponent<AnimationComponent>()));
+                .GetComponentSettings<CombatComponentSettings>(), animationComponent as IAnimationCallerSubscriber));
+            
             
             return base.CreateProduct();
         }

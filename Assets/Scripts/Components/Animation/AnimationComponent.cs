@@ -1,32 +1,43 @@
+using Components.Animation.Interfaces;
 using Components.Interfaces;
 using UnityEngine;
 
 namespace Components.Animation
 {
-   public class AnimationComponent : IEntityComponent
+   public class AnimationComponent : IEntityComponent, IAnimationCallerSubscriber
    {
-      public AnimationEventsListener AnimationEventsListener { get; }
-      
+      private readonly AnimationEventsListener _animationEventsListener;
       private readonly Animator _animator;
 
       public AnimationComponent(Animator animator, AnimationEventsListener eventsListener = null)
       {
          _animator = animator;
-         AnimationEventsListener = eventsListener;
+         _animationEventsListener = eventsListener;
       }
       
-      public void PlayAnimation(string name, float transitionDuration = 0.25f)
+      private void PlayAnimation(string name, float transitionDuration = 0.25f)
       {
          _animator.CrossFadeInFixedTime(name, transitionDuration);
       }
       
-      public void PlayCustomAnimation(string name, AnimationClip customCombatAnimation, float transitionDuration = 0.25f)
+      private void PlayCustomAnimation(IAnimationCaller caller, AnimationClipData clipData)
       {
+         Debug.LogWarning("PLAYCUSTOM "+clipData);
+         _animationEventsListener.SetCaller(caller);
          if (_animator.runtimeAnimatorController is AnimatorOverrideController overrider)
          {
-            overrider[name] = customCombatAnimation;
+            overrider[clipData.TargetStateName] = clipData.AnimationClip;
          }
-         PlayAnimation(name, transitionDuration);
+         PlayAnimation(clipData.TargetStateName, clipData.TransitionDuration);
+      }
+
+      public void RegisterAnimationCaller(ref IAnimationCaller animationCaller)
+      {
+         if (animationCaller!=null)
+         {
+            animationCaller.CallOnAnimation += PlayCustomAnimation;
+            _animationEventsListener.AnimationEventFired += animationCaller.OnAnimationCallback;
+         }
       }
    }
 }

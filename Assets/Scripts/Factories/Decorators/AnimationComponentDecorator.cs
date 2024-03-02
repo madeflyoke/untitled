@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Builders;
 using Components;
+using Components.Animation.Interfaces;
 using Components.Interfaces;
 using Components.Settings;
 using Interfaces;
@@ -16,7 +18,7 @@ namespace Factories.Decorators
             _animationComponentSettings = animationComponentSettings;
             _entityHolder = entityHolder;
         }
-        
+
         public IEntityComponent Decorate()
         {
             var builder = new AnimationComponentBuilder(_entityHolder.SelfTransform.gameObject);

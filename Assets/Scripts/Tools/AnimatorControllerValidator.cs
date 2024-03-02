@@ -58,7 +58,7 @@ namespace Tools
 
         private bool ValidateStatesNames()
         {
-            var values = AnimationNames.GetAnimationNamesValues();
+            var values = AnimatorStatesNames.GetAnimationNamesValues();
             var names = _animatorController.layers[0].stateMachine.states.Select(x => x.state.name).ToArray();
             bool isOk = true;
             
@@ -67,7 +67,7 @@ namespace Tools
                 if (values.Contains(names[i])==false)
                 {
                     Debug.LogError($"Incorrect animator controller {_animatorController.name} state name <color=red>{names[i]}</color>, " +
-                                   $"use <color=yellow>AnimatorNames</color> class to choose one!");
+                                   $"use <color=yellow>AnimatorStatesNames</color> class to choose one!");
                     isOk = false;
                 }
             }

@@ -1,13 +1,9 @@
-using System;
 using Components.Interfaces;
-using Components.Settings;
-using Components.Settings.Interfaces;
 using Factories.Components;
 using Factories.Interfaces;
 using Interfaces;
 using Units.Base;
 using Units.Configs;
-using Units.Enums;
 using Unity.Collections;
 using UnityEngine;
 using Utility;
@@ -34,13 +30,17 @@ namespace Factories.Units.SubFactories.Base
             return _unitEntity;
         }
 
-        protected void DecorateBy(IEntityDecorator decorator)
+        protected IEntityComponent DecorateBy(IEntityDecorator decorator)
         {
-            _unitEntity.AddEntityComponent(decorator.Decorate());
+            var component = decorator.Decorate();
+            _unitEntity.AddEntityComponent(component);
             
 #if UNITY_EDITOR
             Debug.LogWarning($"Unit {Config.UnitVariant} decorated with {decorator.GetType().Name}.");
 #endif
+            
+            return component;
+            
         }
         
         protected TComponent GetEntityComponent<TComponent>() where TComponent : IEntityComponent
