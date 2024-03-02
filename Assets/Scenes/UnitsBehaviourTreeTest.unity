@@ -658,7 +658,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -667,74 +667,13 @@ MonoBehaviour:
       Data: 2|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 3|BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfCombatContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 4|BT.Shared.Containers.SelfCombatDataSharedContainer, Assembly-CSharp
-    - Name: AttackActionsSequence
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[BT.Interfaces.IBehaviorAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 6|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
       Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 7
-      Data: 7|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+      Data: 3|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: true
@@ -758,10 +697,10 @@ MonoBehaviour:
       Data: 
     - Name: mValue
       Entry: 7
-      Data: 8|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
+      Data: 4|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
     - Name: TargetDamageable
       Entry: 7
-      Data: 9|BT.Shared.SharedDamageable, Assembly-CSharp
+      Data: 5|BT.Shared.SharedDamageable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: false
@@ -790,6 +729,84 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: TargetTransform
+      Entry: 7
+      Data: 6|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 8|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfGeneralContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 9|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
+    - Name: SelfTransform
       Entry: 7
       Data: 10|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
     - Name: mIsShared
@@ -836,91 +853,13 @@ MonoBehaviour:
       Data: 11|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 12|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfGeneralContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 13|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
-    - Name: SelfTransform
-      Entry: 7
-      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 15|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
       Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 7
-      Data: 16|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+      Data: 12|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: true
@@ -944,10 +883,10 @@ MonoBehaviour:
       Data: 
     - Name: mValue
       Entry: 7
-      Data: 17|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
+      Data: 13|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
     - Name: CurrentDestinationPoint
       Entry: 7
-      Data: 18|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
+      Data: 14|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: false
@@ -1198,7 +1137,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"Variables":[{"Type":"BT.Shared.Containers.SelfCombatDataSharedContainerVariable","Name":"SelfCombatContainer","IsShared":true,"SelfCombatDataSharedContainermValue":{"List`1AttackActionsSequence":[]}},{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedDamageableTargetDamageable":{"Type":"BT.Shared.SharedDamageable","Name":null},"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.SelfGeneralDataSharedContainerVariable","Name":"SelfGeneralContainer","IsShared":true,"SelfGeneralDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}}]}'
+      JSONSerialization: '{}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -1259,7 +1198,7 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"Variables":[{"Type":"BT.Shared.Containers.SelfCombatDataSharedContainerVariable","Name":"SelfCombatContainer","IsShared":true,"SelfCombatDataSharedContainermValue":{"List`1AttackActionsSequence":[]}},{"Type":"BT.Shared.Containers.DamageableTargetSharedContainerVariable","Name":"DamageableTargetContainer","IsShared":true,"DamageableTargetSharedContainermValue":{"SharedDamageableTargetDamageable":{"Type":"BT.Shared.SharedDamageable","Name":null},"SharedTransformTargetTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.SelfGeneralDataSharedContainerVariable","Name":"SelfGeneralContainer","IsShared":true,"SelfGeneralDataSharedContainermValue":{"SharedTransformSelfTransform":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}}},{"Type":"BT.Shared.Containers.MovementSharedContainerVariable","Name":"MovementContainer","IsShared":true,"MovementSharedContainermValue":{"SharedVector3CurrentDestinationPoint":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}}]}'
+      JSONSerialization: '{}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -1455,7 +1394,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -1464,74 +1403,13 @@ MonoBehaviour:
       Data: 2|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 3|BT.Shared.Containers.SelfCombatDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfCombatContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 4|BT.Shared.Containers.SelfCombatDataSharedContainer, Assembly-CSharp
-    - Name: AttackActionsSequence
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[BT.Interfaces.IBehaviorAction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 6|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
       Data: BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 7
-      Data: 7|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
+      Data: 3|BT.Shared.Containers.DamageableTargetSharedContainerVariable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: true
@@ -1555,10 +1433,10 @@ MonoBehaviour:
       Data: 
     - Name: mValue
       Entry: 7
-      Data: 8|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
+      Data: 4|BT.Shared.Containers.DamageableTargetSharedContainer, Assembly-CSharp
     - Name: TargetDamageable
       Entry: 7
-      Data: 9|BT.Shared.SharedDamageable, Assembly-CSharp
+      Data: 5|BT.Shared.SharedDamageable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: false
@@ -1587,6 +1465,84 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: TargetTransform
+      Entry: 7
+      Data: 6|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: false
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 6
+      Data: 
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 7
+      Data: 8|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
+    - Name: mIsShared
+      Entry: 5
+      Data: true
+    - Name: mIsGlobal
+      Entry: 5
+      Data: false
+    - Name: mIsDynamic
+      Entry: 5
+      Data: false
+    - Name: mName
+      Entry: 1
+      Data: SelfGeneralContainer
+    - Name: mToolTip
+      Entry: 6
+      Data: 
+    - Name: mPropertyMapping
+      Entry: 6
+      Data: 
+    - Name: mPropertyMappingOwner
+      Entry: 6
+      Data: 
+    - Name: mValue
+      Entry: 7
+      Data: 9|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
+    - Name: SelfTransform
       Entry: 7
       Data: 10|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
     - Name: mIsShared
@@ -1633,91 +1589,13 @@ MonoBehaviour:
       Data: 11|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: $v
-      Entry: 7
-      Data: 12|BT.Shared.Containers.SelfGeneralDataSharedContainerVariable, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: true
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 1
-      Data: SelfGeneralContainer
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 7
-      Data: 13|BT.Shared.Containers.SelfGeneralDataSharedContainer, Assembly-CSharp
-    - Name: SelfTransform
-      Entry: 7
-      Data: 14|BehaviorDesigner.Runtime.SharedTransform, Assembly-CSharp
-    - Name: mIsShared
-      Entry: 5
-      Data: false
-    - Name: mIsGlobal
-      Entry: 5
-      Data: false
-    - Name: mIsDynamic
-      Entry: 5
-      Data: false
-    - Name: mName
-      Entry: 6
-      Data: 
-    - Name: mToolTip
-      Entry: 6
-      Data: 
-    - Name: mPropertyMapping
-      Entry: 6
-      Data: 
-    - Name: mPropertyMappingOwner
-      Entry: 6
-      Data: 
-    - Name: mValue
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 7
-      Data: 15|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
       Data: BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: $v
       Entry: 7
-      Data: 16|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
+      Data: 12|BT.Shared.Containers.MovementSharedContainerVariable, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: true
@@ -1741,10 +1619,10 @@ MonoBehaviour:
       Data: 
     - Name: mValue
       Entry: 7
-      Data: 17|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
+      Data: 13|BT.Shared.Containers.MovementSharedContainer, Assembly-CSharp
     - Name: CurrentDestinationPoint
       Entry: 7
-      Data: 18|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
+      Data: 14|BehaviorDesigner.Runtime.SharedVector3, Assembly-CSharp
     - Name: mIsShared
       Entry: 5
       Data: false

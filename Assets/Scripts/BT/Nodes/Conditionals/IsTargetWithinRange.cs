@@ -10,10 +10,10 @@ namespace BT.Nodes.Conditionals
         private SharedTransform _target;
         private float _range;
         
-        public void SetSharedVariables(SharedTransform selfTransform, SharedTransform target, float range)
+        public void SetSharedVariables(SharedTransform selfTransform, SharedTransform targetTransform, float range)
         {
             _selfTransform = selfTransform;
-            _target = target;
+            _target = targetTransform;
             _range = range;
         }
 

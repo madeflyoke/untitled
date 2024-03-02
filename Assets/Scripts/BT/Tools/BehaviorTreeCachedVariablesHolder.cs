@@ -20,6 +20,7 @@ namespace BT.Tools
         
 #if UNITY_EDITOR
         
+        [Button]
         private void Setup()
         {
             _sharedVariables = _behaviorTree.GetAllVariables().ToDictionary(x => x.GetType());

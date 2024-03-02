@@ -17,7 +17,7 @@ namespace Tools
 
             classContent += $"namespace {correctNamespaceName} \n{{\n";
 
-            classContent += $"\tpublic class {className}\n\t{{";
+            classContent += $"\tpublic static class {className}\n\t{{";
 
             
             foreach (string property in content)

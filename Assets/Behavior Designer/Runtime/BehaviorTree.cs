@@ -1,4 +1,5 @@
 using System;
+using BehaviorDesigner.Runtime.Tasks;
 using BT.Tools;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -26,6 +27,11 @@ namespace BehaviorDesigner.Runtime
         }
         
 #endif
+
+        public TTask FindTask<TTask>(string taskName) where TTask: Task
+        {
+            return FindTaskWithName(taskName) as TTask;
+        }
         
     }
 }
