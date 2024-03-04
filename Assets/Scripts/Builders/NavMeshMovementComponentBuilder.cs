@@ -1,4 +1,5 @@
 using Builders.Interfaces;
+using Components.Animation.Interfaces;
 using Components.Movement;
 using UnityEditor.Presets;
 using UnityEngine;

@@ -12,7 +12,6 @@ namespace Components.Combat.Actions
     public abstract class CombatAction : IBehaviorAction, IAnimationCaller
     {
         public Action<IAnimationCaller, AnimationClipData> CallOnAnimation { get; set; }
-
         [field: SerializeField] public AnimationClipData AnimationClipData { get; }
         
         public virtual void OnAnimationCallback(IAnimationCaller caller, AnimationEventType eventType)
@@ -25,7 +24,5 @@ namespace Components.Combat.Actions
        
         public abstract TaskStatus GetCurrentStatus();
         public abstract void Execute();
-        
-       
     }
 }

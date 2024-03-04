@@ -17,8 +17,13 @@ namespace BT.Nodes.Actions
         
         public override TaskStatus OnUpdate()
         {
-            _selfTransform.Value.rotation = Quaternion.LookRotation(_targetTransform.Value.position - _selfTransform.Value.position);
             return TaskStatus.Success;
+        }
+
+        public override void OnFixedUpdate()
+        {
+            base.OnFixedUpdate();
+            _selfTransform.Value.rotation = Quaternion.LookRotation(_targetTransform.Value.position - _selfTransform.Value.position);
         }
     }
 }

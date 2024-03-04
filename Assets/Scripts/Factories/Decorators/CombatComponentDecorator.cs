@@ -11,12 +11,10 @@ namespace Factories.Decorators
     public class CombatComponentDecorator : IEntityDecorator
     {
         private readonly CombatComponentSettings _combatComponentSettings;
-        private readonly IAnimationCallerSubscriber _animationsCallersSubscriber;
 
-        public CombatComponentDecorator(CombatComponentSettings combatComponentSettings, IAnimationCallerSubscriber animationsCallersSubscriber)
+        public CombatComponentDecorator(CombatComponentSettings combatComponentSettings)
         {
             _combatComponentSettings = combatComponentSettings;
-            _animationsCallersSubscriber = animationsCallersSubscriber;
         }
         
         public IEntityComponent Decorate()
@@ -30,7 +28,6 @@ namespace Factories.Decorators
 
             return builder
                 .AddAttackActions(_combatComponentSettings.CombatActions)
-                .RegisterActionsAnimationCalls(_animationsCallersSubscriber)
                 .Build();
         }
     }

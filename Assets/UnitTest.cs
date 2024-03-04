@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BehaviorDesigner.Runtime;
@@ -10,6 +11,7 @@ using Components.Animation;
 using Components.Animation.Interfaces;
 using Components.Combat.Actions;
 using Components.Health;
+using Components.Movement;
 using Cysharp.Threading.Tasks;
 using Interfaces;
 using Sirenix.OdinInspector;
@@ -18,6 +20,7 @@ using Sirenix.Utilities;
 using Units.Base;
 using UnityEngine;
 using UnityEngine.AI;
+using Utility;
 
 public class UnitTest : SerializedMonoBehaviour
 {
@@ -47,7 +50,13 @@ public class UnitTest : SerializedMonoBehaviour
         
         _attackActions.Cast<IAnimationCaller>().ForEach(x => animationComponent.RegisterAnimationCaller(ref x));
 
+        var entity = gameObject.AddComponent<UnitEntity>();
+        var movementComponent = new NavMeshMovementComponent(_agent);
+        entity.AddEntityComponent(movementComponent);
 
+        var movementAnimationCaller = (IAnimationCaller) movementComponent;
+        
+        animationComponent.RegisterAnimationCaller(ref movementAnimationCaller);
 
         MovementSharedContainer movementContainer =
             _behaviorTree.GetCachedVariablesHolder().GetVariable<MovementSharedContainerVariable>().Value;

@@ -6,13 +6,14 @@ namespace Utility
 {
     public static class AnimatorStatesNames
     {
+        public static string None = "None";
         public static string Idle = "Idle";
         public static string Moving = "Moving";
         public static string Combat = "CombatAction";
         
 #if UNITY_EDITOR
         
-        public static List<string> GetAnimationNamesValues()
+        public static List<string> GetAnimatorNamesValues()
         {
             List<string> animationList = new List<string>();
 

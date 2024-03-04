@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using Components.Animation.Interfaces;
 using Components.Interfaces;
+using Sirenix.Utilities;
 using UnityEngine;
 
 namespace Components.Animation
 {
-   public class AnimationComponent : IEntityComponent, IAnimationCallerSubscriber
+   public class AnimationComponent : IEntityComponent
    {
       private readonly AnimationEventsListener _animationEventsListener;
       private readonly Animator _animator;
@@ -14,7 +16,7 @@ namespace Components.Animation
          _animator = animator;
          _animationEventsListener = eventsListener;
       }
-      
+
       private void PlayAnimation(string name, float transitionDuration = 0.25f)
       {
          _animator.CrossFadeInFixedTime(name, transitionDuration);
@@ -26,7 +28,10 @@ namespace Components.Animation
          _animationEventsListener.SetCaller(caller);
          if (_animator.runtimeAnimatorController is AnimatorOverrideController overrider)
          {
-            overrider[clipData.TargetStateName] = clipData.AnimationClip;
+            if (clipData.AnimationClip!=null)
+            {
+               overrider[clipData.TargetStateName] = clipData.AnimationClip;
+            }
          }
          PlayAnimation(clipData.TargetStateName, clipData.TransitionDuration);
       }
@@ -38,6 +43,11 @@ namespace Components.Animation
             animationCaller.CallOnAnimation += PlayCustomAnimation;
             _animationEventsListener.AnimationEventFired += animationCaller.OnAnimationCallback;
          }
+      }
+
+      public void RegisterAnimationCallerMany(IEnumerable<IAnimationCaller> animationCallers)
+      {
+         animationCallers.ForEach(x=>RegisterAnimationCaller(ref x));
       }
    }
 }

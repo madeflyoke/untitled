@@ -1,6 +1,9 @@
+using System.Linq;
 using Components;
 using Components.Animation;
 using Components.Animation.Interfaces;
+using Components.Combat;
+using Components.Movement;
 using Components.Settings;
 using Factories.Decorators;
 using Factories.Units.SubFactories.Attributes;
@@ -23,14 +26,19 @@ namespace Factories.Units.SubFactories
             DecorateBy(new HealthComponentDecorator(Config.ComponentsSettingsHolder
                 .GetComponentSettings<HealthComponentSettings>()));
             
-            DecorateBy(new NavMeshMovementComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
-                .GetComponentSettings<MovementComponentSettings>()));
+            var movementComponent = DecorateBy(new NavMeshMovementComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
+                .GetComponentSettings<MovementComponentSettings>())) as NavMeshMovementComponent;
+            
+            var combatComponent = DecorateBy(new CombatComponentDecorator(Config.ComponentsSettingsHolder
+                .GetComponentSettings<CombatComponentSettings>())) as CombatComponent;
             
             var animationComponent = DecorateBy(new AnimationComponentDecorator(entityHolder, Config.ComponentsSettingsHolder
-                .GetComponentSettings<AnimationComponentSettings>()));
+                .GetComponentSettings<AnimationComponentSettings>())) as AnimationComponent;
             
-            DecorateBy(new CombatComponentDecorator(Config.ComponentsSettingsHolder
-                .GetComponentSettings<CombatComponentSettings>(), animationComponent as IAnimationCallerSubscriber));
+            animationComponent.RegisterAnimationCallerMany(combatComponent.GetCombatActions());
+            var movementAnimationCaller = (IAnimationCaller) movementComponent;
+            
+            animationComponent.RegisterAnimationCaller(ref movementAnimationCaller);
             
             return base.CreateProduct();
         }

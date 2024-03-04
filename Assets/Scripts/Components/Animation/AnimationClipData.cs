@@ -11,9 +11,16 @@ namespace Components.Animation
     [Serializable]
     public class AnimationClipData
     {
-        [field: SerializeField, OnValueChanged(nameof(ValidateAnimation))] public AnimationClip AnimationClip { get; }
+        [field: SerializeField, OnValueChanged(nameof(ValidateAnimation))] public AnimationClip AnimationClip { get; private set; }
         [field: SerializeField, ValueDropdown(nameof(GetNames))] public string TargetStateName { get; private set; }
-        [field: SerializeField] public float TransitionDuration { get; }= 0.25f ;
+        [field: SerializeField] public float TransitionDuration { get; private set; }= 0.25f ;
+
+        public AnimationClipData(AnimationClip animationClip = default, string targetStateName = default, float transitionDuration = 0.25f)
+        {
+            AnimationClip = animationClip;
+            TargetStateName = targetStateName ?? AnimatorStatesNames.Idle;
+            TransitionDuration = transitionDuration;
+        }
         
 #if UNITY_EDITOR
         
@@ -37,7 +44,7 @@ namespace Components.Animation
 
         private List<string> GetNames()
         {
-            return AnimatorStatesNames.GetAnimationNamesValues();
+            return AnimatorStatesNames.GetAnimatorNamesValues();
         }
 #endif
     }
